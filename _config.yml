@@ -1,7 +1,7 @@
 # Site settings
 title: Zenan's Homepage
-baseurl: "/lizn"
-url: "https://lizn-zn.github.io"
+baseurl: ""
+url: https://lizn-zn.github.io/
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
 
 # Author
