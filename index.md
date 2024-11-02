@@ -3,45 +3,70 @@ layout: about
 ---
 
 ## About Me
-I am currently a Ph.D. student in the Institute of Computer Software (ICS) at Nanjing University (NJU), advised by Xiaoxing Ma and Jian L\"{u}. 
-Since July 2023, I am interning at Microsoft Research Asia (MSRA), advised by Fan Yang.
+
+I am a final-year Ph.D. student at the Department of Computer Science and Technology of Nanjing University, advised by Xiaoxing Ma and Jian Lü, and a member of the Institute of Computer Software. Before that, I received my B.Sc. degree from the School of Mathematics at Southwest Jiaotong University and my M.Sc. degree from the Software Institute of Nanjing University.
+
+Address: Nanjing University, Nanjing, China <br>
+Email: lizn # smail.nju.edu.cn
 
 <br>
 
 ## Research Interests 
 
-Before the large language model (LLM) era, my research interests mainly lie in the integration of deep learning and software engineering, especially quality assurance for deep learning models, and software engineering automation via deep learning. 
-In addition, I am also focused on the mathematical optimization, particularly developing fast algorithms and theoretical analysis for minimax/bilevel optimization in large-scale machine learning tasks.
+Before the large language model (LLM) era, my research mainly focused on the integration of deep learning and software engineering, particularly in enhancing quality assurance for deep learning models and advancing software engineering automation through deep learning techniques. Additionally, I was deeply engaged in mathematical optimization, including developing fast algorithms and theoretical analysis for minimax and bilevel optimization in large-scale machine learning tasks.
 
-In the LLM era, my research interests switch to neuro-symbolic AI. 
-Beyond exploring theoretical foundations of neuro-symbolic learning, I am particularly focused on its application, such as using LLMs to perform mathematical reasoning, theorem proving, as well as verified code generation.
-
-<br>
-
-## Education
-
-#### Ph.D. in Computer Science Sep 2020 - Present
-
-Nanjing University, Nanjing, China 
-
-Advisors: Prof. Xiaoxing Ma and Prof. Jian L\"{u}
-
-
-#### M.Sc. in Software Engineering} Sep 2017 - June 2020
-
-Nanjing University, Nanjing, China 
-
-Advisor: Prof. Xiaoxing Ma
-
-#### B.Sc. in Mathematics and Applied Mathematics Sep 2013 - June 2017
-
-Southwest Jiaotong University, Chengdu, China 
-
-Advisor: Prof. Chengjing Wang
+With the emergence of the LLM, my research interests have switched to neuro-symbolic AI. 
+Alongside exploring the theoretical foundations of neuro-symbolic learning, I am especially interested in its practical applications, such as leveraging LLMs for mathematical reasoning, theorem proving, and verified code generation.
 
 <br>
 
-## Selected Publications
+## Education & Intern
+
+<table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
+  <tr>
+    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important; margin-top: 0px"> Research Intern for Systems Research Group </h4>
+    <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Microsoft Research Asia, Beijing, China </p>
+    <p style="margin-top: 2px !important;"> Mentor: Dr. Fan Yang </p>
+    </td>
+    <td style="text-align: right;"><h4 style="margin-top: 0px">July 2023 - Present</h4></td>
+  </tr>
+</table>
+
+<table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
+  <tbody>
+    <tr>
+      <td style="text-align: left;"><h4 style="margin-bottom: 10px !important;"> Ph.D. in Computer Science </h4>
+      <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Nanjing University, Nanjing, China </p>
+      <p style="margin-top: 2px !important;"> Advisors: Prof. Xiaoxing Ma and Prof. Jian Lü </p>
+      </td>
+      <td style="text-align: right;"><h4>Sep 2020 - Present</h4></td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
+  <tr>
+    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important;"> M.Sc. in Software Engineering </h4>
+    <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Nanjing University, Nanjing, China </p>
+    <p style="margin-top: 2px !important;"> Advisors: Prof. Xiaoxing Ma </p>
+    </td>
+    <td style="text-align: right; margin: 0; padding: 0;"><h4>Sep 2017 - June 2020</h4></td>
+  </tr>
+</table>
+
+<table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
+  <tr>
+    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important;"> B.Sc. in Mathematics and Applied Mathematics </h4>
+    <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Southwest Jiaotong University, Chengdu, China </p>
+    <p style="margin-top: 2px !important;"> Advisor: Prof. Chengjing Wang </p>
+    </td>
+    <td style="text-align: right; margin: 0; padding: 0;"><h4>Sep 2013 - June 2017</h4></td>
+  </tr>
+</table>
+
+<br>
+
+<h2 id="publications"> Selected Publications </h2>
 
 **Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency** <br>
 **Zenan Li**\*, Yifan Wu\*, Zhaoyu Li, Xinming Wei, Xian Zhang, Fan Yang, and Xiaoxing Ma <br>
