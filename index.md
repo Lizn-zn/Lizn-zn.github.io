@@ -4,7 +4,7 @@ layout: about
 
 ## About Me
 
-I am now a post-doc researcher at the Department of Computer Science and Technology of ETH Zürich, supervised by Zhendong Su. Before that, I get my Ph.D degree from Nanjing University, advised by Xiaoxing Ma and Jian Lü. Before that, I received my B.Sc. degree from the School of Mathematics at Southwest Jiaotong University and my M.Sc. degree from the Software Institute of Nanjing University.
+I am currently a postdoctoral researcher in the Department of Computer Science and Technology at ETH Zürich, under the supervision of Zhendong Su. I earned my Ph.D. from Nanjing University, where I was advised by Xiaoxing Ma and Jian Lü. Prior to my doctoral studies, I obtained my Bachelor of Science degree from the School of Mathematics at Southwest Jiaotong University and my Master of Science degree from the Software Institute of Nanjing University.
 
 Address: CNB H 105, Universitatstrasse 6, 8092 Zurich <br>
 Email: zenan.li@inf.ethz.ch
