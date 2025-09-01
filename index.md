@@ -4,10 +4,10 @@ layout: about
 
 ## About Me
 
-I am a final-year Ph.D. student at the Department of Computer Science and Technology of Nanjing University, advised by Xiaoxing Ma and Jian Lü, and a member of the Institute of Computer Software. Before that, I received my B.Sc. degree from the School of Mathematics at Southwest Jiaotong University and my M.Sc. degree from the Software Institute of Nanjing University.
+I am now a post-doc researcher at the Department of Computer Science and Technology of ETH Zürich, supervised by Zhendong Su. Before that, I get my Ph.D degree from Nanjing University, advised by Xiaoxing Ma and Jian Lü. Before that, I received my B.Sc. degree from the School of Mathematics at Southwest Jiaotong University and my M.Sc. degree from the Software Institute of Nanjing University.
 
-Address: Nanjing University, Nanjing, China <br>
-Email: lizn # smail.nju.edu.cn
+Address: CNB H 105, Universitatstrasse 6, 8092 Zurich <br>
+Email: zenan.li@inf.ethz.ch
 
 <br>
 
@@ -67,6 +67,14 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
 <br>
 
 <h2 id="publications"> Selected Publications </h2>
+
+**Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning** <br>
+**Zenan Li**\*, Zhaoyu Li\*, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, Xiaoxing Ma <br>
+*International Conference on Learning Representations (ICLR)*, 2025
+
+**Decoupling Training-Free Guided Diffusion by ADMM** <br>
+Youyuan Zhang, Zehua Liu, **Zenan Li**, Zhaoyu Li, James J Clark, Xujie Si <br>
+*Computer Vision and Pattern Recognition Conference (CVPR)*, 2025
 
 **Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency** <br>
 **Zenan Li**\*, Yifan Wu\*, Zhaoyu Li, Xinming Wei, Xian Zhang, Fan Yang, and Xiaoxing Ma <br>

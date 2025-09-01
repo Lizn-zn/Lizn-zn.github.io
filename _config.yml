@@ -8,7 +8,7 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 author:
   name: Zenan Li
   desc: Ph.D candidate @ Nanjing University
-  email: lizn@smail.nju.edu.cn
+  email: zenan.li@inf.ethz.ch
   selfie: images/bio-photo.jpg
 
 # social
