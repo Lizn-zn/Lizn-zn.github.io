@@ -7,7 +7,7 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 # Author
 author:
   name: Zenan Li
-  desc: Ph.D candidate @ Nanjing University
+  desc: Post-doc researcher @ ETH Zürich
   email: zenan.li@inf.ethz.ch
   selfie: images/bio-photo.jpg
 
