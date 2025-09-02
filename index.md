@@ -6,7 +6,7 @@ layout: about
 
 I am currently a postdoctoral researcher in the Department of Computer Science and Technology at ETH Zürich, under the supervision of Zhendong Su. I earned my Ph.D. from Nanjing University, where I was advised by Xiaoxing Ma and Jian Lü. Prior to my doctoral studies, I obtained my Bachelor of Science degree from the School of Mathematics at Southwest Jiaotong University and my Master of Science degree from the Software Institute of Nanjing University.
 
-Address: CNB H 105, Universitatstrasse 6, 8092 Zurich <br>
+Address: CNB H 105, Universitatstrasse 6, 8092 Zürich <br>
 Email: zenan.li@inf.ethz.ch
 
 <br>
@@ -89,19 +89,19 @@ Zhaoyu Li, Jialiang Sun, Logan Murphy, Qidong Su, **Zenan Li**, Xian Zhang, Kaiy
 *Conference on Language Modeling (COLM)*, 2024
 
 **Neuro-symbolic Learning Yielding Logical Constraints** <br>
-**Zenan Li**, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, Jian Lu <br>
+**Zenan Li**, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, Jian Lü <br>
 *Advances in Neural Information Processing Systems (NeurIPS)*, 2023 
 
 **Learning with Logical Constraints but without Shortcut Satisfaction** <br>
-**Zenan Li**, Zehua Liu, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lu <br> 
+**Zenan Li**, Zehua Liu, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü <br> 
 *International Conference on Learning Representations (ICLR)*, 2023
 
 **Softened Symbol Grounding for Neuro-symbolic Systems** <br>
-**Zenan Li**, Yuan Yao, Taolue Chen, Jingwei Xu, Chun Cao, Xiaoxing Ma, and Jian Lu <br>
+**Zenan Li**, Yuan Yao, Taolue Chen, Jingwei Xu, Chun Cao, Xiaoxing Ma, and Jian Lü <br>
 *International Conference on Learning Representations (ICLR)*, 2023
 
 **Lightweight Approaches to DNN Regression Error Reduction: An Uncertainty Alignment Perspective** <br>
-**Zenan Li**, Maorun Zhang, Jingwei Xu, Yuan Yao, Chun Cao, Taolue Chen, Xiaoxing Ma, and Jian Lu <br>
+**Zenan Li**, Maorun Zhang, Jingwei Xu, Yuan Yao, Chun Cao, Taolue Chen, Xiaoxing Ma, and Jian Lü <br>
 *International Conference on Software Engineering (ICSE)*, 2023
 
 **Fair Representation Learning: An Alternative to Mutual Information** <br>
@@ -117,11 +117,11 @@ Yuehuan Wang, **Zenan Li**, Jingwei Xu, Ping Yu, Taolue Chen, and Xiaoxing Ma <b
 *Journal of Computer Science and Technology (JCST)*, 2020
 
 **Operational Calibration: Debugging Confidence Errors for DNNs in the Field** <br>
-**Zenan Li**, Xiaoxing Ma, Chang Xu, Jingwei Xu, Chun Cao, and Jian Lu <br>
+**Zenan Li**, Xiaoxing Ma, Chang Xu, Jingwei Xu, Chun Cao, and Jian Lü <br>
 *ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)*, 2020
 
 **Boosting Operational DNN Testing Efficiency Through Conditioning** <br>
-**Zenan Li**, Xiaoxing Ma, Chang Xu, Chun Cao, Jingwei Xu, and Jian L\"{u} <br>
+**Zenan Li**, Xiaoxing Ma, Chang Xu, Chun Cao, Jingwei Xu, and Jian Lü <br>
 *ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)*, 2019 
 
 **Structural Coverage Criteria for Neural Networks Could Be Misleading** <br>
