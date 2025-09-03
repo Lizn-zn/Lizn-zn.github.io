@@ -4,7 +4,7 @@ layout: about
 
 ## About Me
 
-I am currently a postdoctoral researcher in the Department of Computer Science and Technology at ETH Zürich, under the supervision of Zhendong Su. I earned my Ph.D. from Nanjing University, where I was advised by Xiaoxing Ma and Jian Lü. Prior to my doctoral studies, I obtained my Bachelor of Science degree from the School of Mathematics at Southwest Jiaotong University and my Master of Science degree from the Software Institute of Nanjing University.
+I am currently a postdoctoral researcher in the Department of Computer Science and Technology at ETH Zürich, under the supervision of Zhendong Su. I obtained my Ph.D. from Nanjing University, where I was advised by Xiaoxing Ma and Jian Lü. Prior to my doctoral studies, I received a Bachelor of Science degree from the School of Mathematics at Southwest Jiaotong University and a Master of Science degree from the Software Institute of Nanjing University.
 
 Address: CNB H 105, Universitatstrasse 6, 8092 Zürich <br>
 Email: zenan.li@inf.ethz.ch
@@ -24,11 +24,21 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
 
 <table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
   <tr>
+    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important; margin-top: 0px"> Post-doc Researcher </h4>
+    <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> ETH Zürich, Switzerland </p>
+    <p style="margin-top: 2px !important;"> Supervisor: Prof. Zhendong Su </p>
+    </td>
+    <td style="text-align: right;"><h4 style="margin-top: 0px">Sep 2025 - Present</h4></td>
+  </tr>
+</table>
+
+<table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
+  <tr>
     <td style="text-align: left;"><h4 style="margin-bottom: 10px !important; margin-top: 0px"> Research Intern for Systems Research Group </h4>
     <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Microsoft Research Asia, Beijing, China </p>
     <p style="margin-top: 2px !important;"> Mentor: Dr. Fan Yang </p>
     </td>
-    <td style="text-align: right;"><h4 style="margin-top: 0px">July 2023 - Present</h4></td>
+    <td style="text-align: right;"><h4 style="margin-top: 0px">July 2023 - Dec 2024</h4></td>
   </tr>
 </table>
 
@@ -39,7 +49,7 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
       <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Nanjing University, Nanjing, China </p>
       <p style="margin-top: 2px !important;"> Advisors: Prof. Xiaoxing Ma and Prof. Jian Lü </p>
       </td>
-      <td style="text-align: right;"><h4>Sep 2020 - Present</h4></td>
+      <td style="text-align: right;"><h4>Sep 2020 - June 2025</h4></td>
     </tr>
   </tbody>
 </table>
