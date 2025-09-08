@@ -1,0 +1,98 @@
+.misc-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  .links-section {
+    margin-bottom: 3rem;
+
+    h3 {
+      color: $default-color;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.8rem;
+        padding: 0;
+        background: none;
+        border: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-right: 2rem;
+
+        a {
+          color: $default-color;
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.6;
+          display: inline;
+          padding: 0.3rem 0;
+          border-bottom: 1px solid transparent;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: darken($default-color, 30%);
+            border-bottom-color: $default-color;
+          }
+        }
+
+        &::before {
+          content: "→";
+          margin-right: 0.5rem;
+          font-size: 0.9rem;
+          color: lighten($default-color, 20%);
+          transition: all 0.2s ease;
+        }
+
+        &:hover::before {
+          color: $default-color;
+          transform: translateX(2px);
+        }
+      }
+    }
+  }
+}
+
+// 导航栏活跃状态样式
+.nav li a.active {
+  opacity: 1;
+  font-weight: bold;
+  color: darken($default-color, 20%);
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .misc-container {
+    padding: 1rem;
+
+    .links-section {
+      margin-bottom: 2rem;
+
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .links-list li {
+        margin-bottom: 0.6rem;
+        margin-right: 1rem;
+        display: block;
+
+        a {
+          font-size: 0.95rem;
+          padding: 0.4rem 0;
+        }
+      }
+    }
+  }
+}
