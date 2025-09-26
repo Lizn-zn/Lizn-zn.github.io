@@ -12,10 +12,10 @@ body {
 
 html {
   font-family: $serif-primary;
-  font-size: 14px;
+  font-size: 16px;
 
   @media (min-width: 600px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -23,27 +23,31 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-// h1 
-h2 {
-  color: #44546A;
-  border-bottom: 2px solid #000; /* 你可以调整颜色和粗细 */
-  padding-bottom: 10px; /* 你可以调整间距 */
-}
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
   color: $default-shade;
-  font-family: $sans-serif;
+  font-family: $serif-secondary;
+  font-weight: 600;
   line-height: normal;
+}
+
+h2 {
+  color: #44546A;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
 }
 
 li,
 ul,
 p {
   color: $default-shade;
-  font-family: $sans-serif;
-  line-height: 1.2;
+  font-family: $serif-primary;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 li,
@@ -52,7 +56,7 @@ ul {
 }
 
 a {
-  color: #999;
+  color: #4682B4;
   text-decoration: none;
 }
 

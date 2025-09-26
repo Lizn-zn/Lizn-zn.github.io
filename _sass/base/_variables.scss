@@ -10,11 +10,10 @@ $shadow-color: rgba(0, 0, 0, .2);
 $code-color: #bf616a;
 
 // Fonts
-$serif-primary: 'Libre Baskerville', 'Times New Roman', Times, serif;
-$serif-secondary: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
-$sans-serif: Palatino, sans-serif, 'Segoe UI';
-// $sans-serif: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-$monospaced: Menlo, Monaco, monospace;
+$serif-primary: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif-secondary: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$sans-serif: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monospaced: Monaco, Consolas, 'Lucida Console', monospace;
 
 @mixin box-sizing($type: border-box) {
   -webkit-box-sizing: $type;

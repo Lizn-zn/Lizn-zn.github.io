@@ -6,9 +6,6 @@ layout: about
 
 I am currently a postdoctoral researcher in the Department of Computer Science and Technology at ETH Zürich, under the supervision of Zhendong Su. I obtained my Ph.D. from Nanjing University, where I was advised by Xiaoxing Ma and Jian Lü. Prior to my doctoral studies, I received a Bachelor of Science degree from the School of Mathematics at Southwest Jiaotong University and a Master of Science degree from the Software Institute of Nanjing University.
 
-Address: CNB H 105, Universitatstrasse 6, 8092 Zürich <br>
-Email: zenan.li@inf.ethz.ch
-
 <br>
 
 ## Research Interests 
@@ -17,6 +14,62 @@ Before the large language model (LLM) era, my research mainly focused on the int
 
 With the emergence of the LLM, my research interests have switched to neuro-symbolic AI. 
 Alongside exploring the theoretical foundations of neuro-symbolic learning, I am especially interested in its practical applications, such as leveraging LLMs for mathematical reasoning, theorem proving, and verified code generation.
+
+<br>
+
+<h2 id="publications"> Selected Publications </h2>
+
+**Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning** [[paper]](https://arxiv.org/abs/2502.13834)[[code]](https://github.com/lizn-zn/neqlips) <br> 
+**Zenan Li**\*, Zhaoyu Li\*, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, Xiaoxing Ma <br>
+*International Conference on Learning Representations (ICLR)*, 2025
+
+**Decoupling Training-Free Guided Diffusion by ADMM** [[paper]](https://arxiv.org/abs/2411.12773) [[code]](https://github.com/youyuan-zhang/ADMMDiff) <br>
+Youyuan Zhang, Zehua Liu, **Zenan Li**, Zhaoyu Li, James J Clark, Xujie Si <br>
+*Computer Vision and Pattern Recognition Conference (CVPR)*, 2025
+
+**Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency** [[paper]](https://arxiv.org/abs/2410.20936) [[code]](https://github.com/Miracle-Messi/Isa-AutoFormal)<br>
+**Zenan Li**\*, Yifan Wu\*, Zhaoyu Li, Xinming Wei, Xian Zhang, Fan Yang, and Xiaoxing Ma <br>
+*Advances in Neural Information Processing Systems (NeurIPS)*, 2024
+
+**Neuro-Symbolic Data Generation for Math Reasoning** [[paper]](https://arxiv.org/abs/2412.04857) <br>
+**Zenan Li**\*, Zhi Zhou\*, Yuan Yao, Xian Zhang, Yu-Feng Li, Chun Cao, Fan Yang, and Xiaoxing Ma <br>
+*Advances in Neural Information Processing Systems (NeurIPS)*, 2024
+
+**A Survey on Deep Learning for Theorem Proving** [[paper]](https://arxiv.org/abs/2404.09939) [[code]](https://github.com/zhaoyu-li/DL4TP)<br>
+Zhaoyu Li, Jialiang Sun, Logan Murphy, Qidong Su, **Zenan Li**, Xian Zhang, Kaiyu Yang, and Xujie Si <br>
+*Conference on Language Modeling (COLM)*, 2024
+
+**Neuro-symbolic Learning Yielding Logical Constraints** [[paper]](https://arxiv.org/abs/2410.20957) [[code]](https://github.com/Lizn-zn/Nesy-Programming) <br>
+**Zenan Li**, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, Jian Lü <br>
+*Advances in Neural Information Processing Systems (NeurIPS)*, 2023 
+
+**Learning with Logical Constraints but without Shortcut Satisfaction** [[paper]](https://arxiv.org/abs/2403.00329) [[code]](https://github.com/SoftWiser-group/NeSy-without-Shortcuts) <br>
+**Zenan Li**, Zehua Liu, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü <br> 
+*International Conference on Learning Representations (ICLR)*, 2023
+
+**Softened Symbol Grounding for Neuro-symbolic Systems** [[paper]](https://arxiv.org/abs/2403.00323) [[code]](https://github.com/SoftWiser-group/Soften-NeSy-learning) <br>
+**Zenan Li**, Yuan Yao, Taolue Chen, Jingwei Xu, Chun Cao, Xiaoxing Ma, and Jian Lü <br>
+*International Conference on Learning Representations (ICLR)*, 2023
+
+**Lightweight Approaches to DNN Regression Error Reduction: An Uncertainty Alignment Perspective** [[paper]](https://ieeexplore.ieee.org/document/10172764) [[code]](https://github.com/Lizn-zn/Uncertainty-Alignment) <br>
+**Zenan Li**, Maorun Zhang, Jingwei Xu, Yuan Yao, Chun Cao, Taolue Chen, Xiaoxing Ma, and Jian Lü <br>
+*International Conference on Software Engineering (ICSE)*, 2023
+
+**Fair Representation Learning: An Alternative to Mutual Information** [[paper]](https://dl.acm.org/doi/10.1145/3534678.3539302) [[code]](https://github.com/SoftWiser-group/FairDisCo) <br>
+Ji Liu, **Zenan Li**, Yuan Yao, Feng Xu, Xiaoxing Ma, Miao Xu, and Hanghang Tong <br>
+*ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)*, 2022
+
+**Operational Calibration: Debugging Confidence Errors for DNNs in the Field** [[paper]](https://arxiv.org/abs/1910.02352) [[code]](https://github.com/Lizn-zn/Op-QA) <br>
+**Zenan Li**, Xiaoxing Ma, Chang Xu, Jingwei Xu, Chun Cao, and Jian Lü <br>
+*ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)*, 2020
+
+**Boosting Operational DNN Testing Efficiency Through Conditioning** [[paper]](https://arxiv.org/abs/1906.02533) [[code]](https://github.com/Lizn-zn/DNNOpAcc) <br>
+**Zenan Li**, Xiaoxing Ma, Chang Xu, Chun Cao, Jingwei Xu, and Jian Lü <br>
+*ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)*, 2019 
+
+**Structural Coverage Criteria for Neural Networks Could Be Misleading** [[paper]](https://dl.acm.org/doi/10.1109/ICSE-NIER.2019.00031) <br>
+**Zenan Li**, Xiaoxing Ma, Chang Xu, and Chun Cao <br>
+*International Conference on Software Engineering, New Ideas and Emerging Results track (ICSE-NIER)*, 2019
 
 <br>
 
@@ -43,20 +96,18 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
 </table>
 
 <table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
-  <tbody>
     <tr>
-      <td style="text-align: left;"><h4 style="margin-bottom: 10px !important;"> Ph.D. in Computer Science </h4>
+      <td style="text-align: left;"><h4 style="margin-bottom: 10px !important; margin-top: 0px"> Ph.D. in Computer Science </h4>
       <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Nanjing University, Nanjing, China </p>
       <p style="margin-top: 2px !important;"> Advisors: Prof. Xiaoxing Ma and Prof. Jian Lü </p>
       </td>
       <td style="text-align: right;"><h4>Sep 2020 - June 2025</h4></td>
     </tr>
-  </tbody>
 </table>
 
 <table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
   <tr>
-    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important;"> M.Sc. in Software Engineering </h4>
+    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important; margin-top: 0px"> M.Sc. in Software Engineering </h4>
     <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Nanjing University, Nanjing, China </p>
     <p style="margin-top: 2px !important;"> Advisors: Prof. Xiaoxing Ma </p>
     </td>
@@ -66,7 +117,7 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
 
 <table style="width: 100%; margin: 0; padding: 0; border-collapse: collapse;">
   <tr>
-    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important;"> B.Sc. in Mathematics and Applied Mathematics </h4>
+    <td style="text-align: left;"><h4 style="margin-bottom: 10px !important; margin-top: 0px"> B.Sc. in Mathematics and Applied Mathematics </h4>
     <p style="margin-top: 2px !important; margin-bottom: 2px !important;"> Southwest Jiaotong University, Chengdu, China </p>
     <p style="margin-top: 2px !important;"> Advisor: Prof. Chengjing Wang </p>
     </td>
@@ -74,67 +125,7 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
   </tr>
 </table>
 
-<br>
+## Contact
 
-<h2 id="publications"> Selected Publications </h2>
-
-**Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning** <br>
-**Zenan Li**\*, Zhaoyu Li\*, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, Xiaoxing Ma <br>
-*International Conference on Learning Representations (ICLR)*, 2025
-
-**Decoupling Training-Free Guided Diffusion by ADMM** <br>
-Youyuan Zhang, Zehua Liu, **Zenan Li**, Zhaoyu Li, James J Clark, Xujie Si <br>
-*Computer Vision and Pattern Recognition Conference (CVPR)*, 2025
-
-**Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency** <br>
-**Zenan Li**\*, Yifan Wu\*, Zhaoyu Li, Xinming Wei, Xian Zhang, Fan Yang, and Xiaoxing Ma <br>
-*Advances in Neural Information Processing Systems (NeurIPS)*, 2024
-
-**Neuro-Symbolic Data Generation for Math Reasoning** <br>
-**Zenan Li**\*, Zhi Zhou\*, Yuan Yao, Xian Zhang, Yu-Feng Li, Chun Cao, Fan Yang, and Xiaoxing Ma <br>
-*Advances in Neural Information Processing Systems (NeurIPS)*, 2024
-
-**A Survey on Deep Learning for Theorem Proving** <br>
-Zhaoyu Li, Jialiang Sun, Logan Murphy, Qidong Su, **Zenan Li**, Xian Zhang, Kaiyu Yang, and Xujie Si <br>
-*Conference on Language Modeling (COLM)*, 2024
-
-**Neuro-symbolic Learning Yielding Logical Constraints** <br>
-**Zenan Li**, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, Jian Lü <br>
-*Advances in Neural Information Processing Systems (NeurIPS)*, 2023 
-
-**Learning with Logical Constraints but without Shortcut Satisfaction** <br>
-**Zenan Li**, Zehua Liu, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü <br> 
-*International Conference on Learning Representations (ICLR)*, 2023
-
-**Softened Symbol Grounding for Neuro-symbolic Systems** <br>
-**Zenan Li**, Yuan Yao, Taolue Chen, Jingwei Xu, Chun Cao, Xiaoxing Ma, and Jian Lü <br>
-*International Conference on Learning Representations (ICLR)*, 2023
-
-**Lightweight Approaches to DNN Regression Error Reduction: An Uncertainty Alignment Perspective** <br>
-**Zenan Li**, Maorun Zhang, Jingwei Xu, Yuan Yao, Chun Cao, Taolue Chen, Xiaoxing Ma, and Jian Lü <br>
-*International Conference on Software Engineering (ICSE)*, 2023
-
-**Fair Representation Learning: An Alternative to Mutual Information** <br>
-Ji Liu, **Zenan Li**, Yuan Yao, Feng Xu, Xiaoxing Ma, Miao Xu, and Hanghang Tong <br>
-*ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)*, 2022
-
-**Towards effective metamorphic testing by algorithm stability for linear classification programs** <br>
-Yingzhuo Yang, **Zenan Li**, Huiyan Wang, Chang Xu, and Xiaoxing Ma <br>
-*Journal of Systems and Software (JSS)*, 2021
-
-**Predicted robustness as qos for deep neural network models** <br>
-Yuehuan Wang, **Zenan Li**, Jingwei Xu, Ping Yu, Taolue Chen, and Xiaoxing Ma <br>
-*Journal of Computer Science and Technology (JCST)*, 2020
-
-**Operational Calibration: Debugging Confidence Errors for DNNs in the Field** <br>
-**Zenan Li**, Xiaoxing Ma, Chang Xu, Jingwei Xu, Chun Cao, and Jian Lü <br>
-*ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)*, 2020
-
-**Boosting Operational DNN Testing Efficiency Through Conditioning** <br>
-**Zenan Li**, Xiaoxing Ma, Chang Xu, Chun Cao, Jingwei Xu, and Jian Lü <br>
-*ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)*, 2019 
-
-**Structural Coverage Criteria for Neural Networks Could Be Misleading** <br>
-**Zenan Li**, Xiaoxing Ma, Chang Xu, and Chun Cao <br>
-*International Conference on Software Engineering, New Ideas and Emerging Results track (ICSE-NIER)*, 2019
-
+Address: CNB H 105, Universitatstrasse 6, 8092 Zürich <br>
+Email: zenan.li@inf.ethz.ch
