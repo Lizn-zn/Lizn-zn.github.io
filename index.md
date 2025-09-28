@@ -19,12 +19,20 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
 
 <h2 id="publications"> Selected Publications </h2>
 
+**Reviving DSP for Advanced Theorem Proving in the Era of Reasoning Models** [[paper]](https://arxiv.org/abs/2506.11487) [[code]](https://github.com/microsoft/DSP-Plus)
+Chenrui Cao, Liangcheng Song, **Zenan Li**, Xinyi Le, Xian Zhang, Hui Xue, and Fan Yang <br>
+*Advances in Neural Information Processing Systems (NeurIPS)*, 2025
+
+**A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning** [[paper]](https://arxiv.org/abs/2502.00511) [[code]]
+Zhi Zhou, Tan Yuhao, **Zenan Li**, Yuan Yao, Lan-Zhe Guo, Yu-Feng Li, and Xiaoxing Ma <br>
+*Advances in Neural Information Processing Systems (NeurIPS)*, 2025
+
 **Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning** [[paper]](https://arxiv.org/abs/2502.13834)[[code]](https://github.com/lizn-zn/neqlips) <br> 
-**Zenan Li**\*, Zhaoyu Li\*, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, Xiaoxing Ma <br>
+**Zenan Li**\*, Zhaoyu Li\*, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, and Xiaoxing Ma <br>
 *International Conference on Learning Representations (ICLR)*, 2025
 
 **Decoupling Training-Free Guided Diffusion by ADMM** [[paper]](https://arxiv.org/abs/2411.12773) [[code]](https://github.com/youyuan-zhang/ADMMDiff) <br>
-Youyuan Zhang, Zehua Liu, **Zenan Li**, Zhaoyu Li, James J Clark, Xujie Si <br>
+Youyuan Zhang, Zehua Liu, **Zenan Li**, Zhaoyu Li, James J Clark, and Xujie Si <br>
 *Computer Vision and Pattern Recognition Conference (CVPR)*, 2025
 
 **Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency** [[paper]](https://arxiv.org/abs/2410.20936) [[code]](https://github.com/Miracle-Messi/Isa-AutoFormal)<br>
@@ -40,7 +48,7 @@ Zhaoyu Li, Jialiang Sun, Logan Murphy, Qidong Su, **Zenan Li**, Xian Zhang, Kaiy
 *Conference on Language Modeling (COLM)*, 2024
 
 **Neuro-symbolic Learning Yielding Logical Constraints** [[paper]](https://arxiv.org/abs/2410.20957) [[code]](https://github.com/Lizn-zn/Nesy-Programming) <br>
-**Zenan Li**, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, Jian Lü <br>
+**Zenan Li**, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü <br>
 *Advances in Neural Information Processing Systems (NeurIPS)*, 2023 
 
 **Learning with Logical Constraints but without Shortcut Satisfaction** [[paper]](https://arxiv.org/abs/2403.00329) [[code]](https://github.com/SoftWiser-group/NeSy-without-Shortcuts) <br>
