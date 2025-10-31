@@ -23,7 +23,7 @@ Alongside exploring the theoretical foundations of neuro-symbolic learning, I am
 Chenrui Cao, Liangcheng Song, **Zenan Li**, Xinyi Le, Xian Zhang, Hui Xue, and Fan Yang <br>
 *Advances in Neural Information Processing Systems (NeurIPS)*, 2025
 
-**A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning** [[paper]](https://arxiv.org/abs/2502.00511) [[code]] <br> 
+**A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning** [[paper]](https://arxiv.org/abs/2502.00511) [[code]](https://github.com/WNJXYK/RPC/) <br> 
 Zhi Zhou, Tan Yuhao, **Zenan Li**, Yuan Yao, Lan-Zhe Guo, Yu-Feng Li, and Xiaoxing Ma <br>
 *Advances in Neural Information Processing Systems (NeurIPS)*, 2025
 
