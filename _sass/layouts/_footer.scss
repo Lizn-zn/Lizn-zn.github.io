@@ -1,16 +1,4 @@
+// Social layer (kept for compatibility but moved to sidebar)
 .social-layer {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  color: lighten(gray, 30%);
-  font-size: 0.9em;
-
-  .social-icons {
-    ul {
-     list-style: none;
-      li {
-        display: inline;
-      }
-    }
-  }
+  display: none; // Hidden since social links are now in sidebar
 }

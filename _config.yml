@@ -1,5 +1,5 @@
 # Site settings
-title: Homepage
+title: Zenan Li
 baseurl: ""
 url: https://lizn-zn.github.io/
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
@@ -7,7 +7,7 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 # Author
 author:
   name: Zenan Li
-  desc: Post-doc researcher @ ETH Zürich
+  desc: Postdoctoral Researcher, ETH Zürich
   email: zenan.li@inf.ethz.ch
   selfie: images/bio-photo.jpg
 
@@ -32,15 +32,20 @@ social:
   steam:
   tumblr:
   gitlab:
-  twitter: Null
+  twitter:
   vimeo:
   wordpress:
   youtube:
   default_txt: "Follow On"
 
 # Build settings
+theme: null
 encoding: utf-8
 markdown: kramdown
+
+# Disable github-metadata to avoid Ruby 3.4 compatibility issues
+github: [metadata]
+repository: Lizn-zn/Lizn-zn.github.io
 
 # Assets
 sass:
