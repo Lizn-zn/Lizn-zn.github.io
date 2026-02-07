@@ -39,6 +39,7 @@ social:
   default_txt: "Follow On"
 
 # Build settings
+encoding: utf-8
 markdown: kramdown
 
 # Assets

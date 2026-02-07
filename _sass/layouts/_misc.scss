@@ -47,7 +47,7 @@
         }
 
         &::before {
-          content: "→";
+          content: "\2192";
           margin-right: 0.5rem;
           font-size: 0.9rem;
           color: lighten($default-color, 20%);
@@ -63,14 +63,14 @@
   }
 }
 
-// 导航栏活跃状态样式
+// Nav active state
 .nav li a.active {
   opacity: 1;
   font-weight: bold;
   color: darken($default-color, 20%);
 }
 
-// 响应式设计
+// Responsive design
 @media (max-width: 768px) {
   .misc-container {
     padding: 1rem;

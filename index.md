@@ -4,20 +4,25 @@ layout: about
 
 ## About Me
 
-I am currently a postdoctoral researcher in the Department of Computer Science and Technology at ETH Zürich, under the supervision of Zhendong Su. I obtained my Ph.D. from Nanjing University, where I was advised by Xiaoxing Ma and Jian Lü. Prior to my doctoral studies, I received a Bachelor of Science degree from the School of Mathematics at Southwest Jiaotong University and a Master of Science degree from the Software Institute of Nanjing University.
+I am a postdoctoral researcher in the Department of Computer Science at ETH Zürich, supervised by Prof. Zhendong Su. I received my Ph.D. from Nanjing University, advised by Prof. Xiaoxing Ma and Prof. Jian Lü. Prior to that, I obtained my B.Sc. in Mathematics from Southwest Jiaotong University and M.Sc. from the Software Institute of Nanjing University. My research sits at the intersection of AI and formal methods, with a focus on neuro-symbolic AI, LLM-based theorem proving, and mathematical reasoning.
 
 <br>
 
 ## Research Interests 
 
-Before the large language model (LLM) era, my research mainly focused on the integration of deep learning and software engineering, particularly in enhancing quality assurance for deep learning models and advancing software engineering automation through deep learning techniques. Additionally, I was deeply engaged in mathematical optimization, including developing fast algorithms and theoretical analysis for minimax and bilevel optimization in large-scale machine learning tasks.
+**AI · Formal Methods · Neuro-Symbolic AI · LLMs for Theorem Proving and Mathematical Reasoning**
 
-With the emergence of the LLM, my research interests have switched to neuro-symbolic AI. 
-Alongside exploring the theoretical foundations of neuro-symbolic learning, I am especially interested in its practical applications, such as leveraging LLMs for mathematical reasoning, theorem proving, and verified code generation.
+Before the advent of large language models (LLMs), my research primarily focused on the integration of deep learning and software engineering, particularly quality assurance for deep learning models and software engineering automation via deep learning. Additionally, I worked on mathematical optimization, developing fast algorithms and theoretical analysis for minimax/bilevel optimization in large-scale machine learning.
+
+In the LLM era, my research has shifted to neuro-symbolic AI. Beyond exploring the theoretical foundations of neuro-symbolic learning, I am particularly focused on its applications, including LLM-based mathematical reasoning, theorem proving, and verified code generation.
 
 <br>
 
 <h2 id="publications"> Selected Publications </h2>
+
+**Neuro-Symbolic Proof Generation for Scaling Systems Software Verification** <br>
+Baoding He\*, **Zenan Li**\*, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su <br>
+*In submission*
 
 **Reviving DSP for Advanced Theorem Proving in the Era of Reasoning Models** [[paper]](https://arxiv.org/abs/2506.11487) [[code]](https://github.com/microsoft/DSP-Plus) <br> 
 Chenrui Cao, Liangcheng Song, **Zenan Li**, Xinyi Le, Xian Zhang, Hui Xue, and Fan Yang <br>
@@ -132,6 +137,12 @@ Ji Liu, **Zenan Li**, Yuan Yao, Feng Xu, Xiaoxing Ma, Miao Xu, and Hanghang Tong
     <td style="text-align: right; margin: 0; padding: 0;"><h4>Sep 2013 - June 2017</h4></td>
   </tr>
 </table>
+
+## Honors, Awards & Service
+
+- CCF Outstanding Doctoral Dissertation Award (Top 10 per year in Computer Science across China)
+- Program Committee / Reviewer: NeurIPS 2023--2025, ICML 2024--2025, ICLR 2023--2025.
+- Teaching Assistant: Discrete Mathematics (2020, 2021, 2022), Nanjing University.
 
 ## Contact
 
