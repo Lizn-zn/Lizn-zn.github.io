@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zenan Li - Postdoctoral Researcher at ETH Zürich. Research on neuro-symbolic AI, LLM-based theorem proving, and mathematical reasoning.">
+  <title>Zenan Li - Academic Homepage</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#fefffe',
+            foreground: '#0f172a',
+            primary: '#1e293b',
+            accent: '#d4a562',
+            'accent-dark': '#b88a4d',
+            muted: '#64748b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Crimson Text', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <!-- Top Navigation -->
+  <nav class="top-nav glass fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#homepage" class="font-serif text-xl font-bold text-primary tracking-wide">
+        Zenan Li
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-6 nav-links text-sm">
+        <a href="#homepage" class="nav-item">Homepage</a>
+        <a href="#about" class="nav-item">About Me</a>
+        <a href="#latest-news" class="nav-item">News</a>
+        <a href="#publications" class="nav-item">Publications</a>
+        <a href="#honors" class="nav-item">Honors</a>
+        <a href="#service" class="nav-item">Service</a>
+        <a href="#education" class="nav-item">Education</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden mobile-menu-btn text-slate-600">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 nav-links">
+      <div class="flex flex-col space-y-3 text-sm">
+        <a href="#homepage" class="nav-item">Homepage</a>
+        <a href="#about" class="nav-item">About Me</a>
+        <a href="#latest-news" class="nav-item">News</a>
+        <a href="#publications" class="nav-item">Publications</a>
+        <a href="#honors" class="nav-item">Honors</a>
+        <a href="#service" class="nav-item">Service</a>
+        <a href="#education" class="nav-item">Education</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+
+    <!-- Hero Section -->
+    <section id="homepage" class="mb-16">
+      <div class="grid-layout">
+        <!-- Left: Profile Image & Quick Info -->
+        <div class="flex flex-col items-center lg:items-start">
+          <div class="profile-image-container mb-6">
+            <img src="images/bio-photo.jpg" alt="Zenan Li"
+                 class="w-48 h-48 rounded-2xl object-cover shadow-lg border-4 border-white">
+          </div>
+
+          <div class="text-center lg:text-left">
+            <h1 class="font-serif text-2xl font-bold text-primary mb-1">Zenan Li</h1>
+            <p class="text-muted text-sm mb-1">Postdoctoral Researcher</p>
+            <p class="text-muted text-sm mb-4">ETH Zürich</p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-4 mt-2">
+            <a href="mailto:zenan.li@inf.ethz.ch" class="text-muted hover:text-accent transition-colors" title="Email">
+              <i class="fas fa-envelope text-lg"></i>
+            </a>
+            <a href="https://github.com/Lizn-zn" class="text-muted hover:text-accent transition-colors" title="GitHub">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=eu4eqTcAAAAJ&hl=zh-CN" class="text-muted hover:text-accent transition-colors" title="Google Scholar">
+              <i class="fas fa-graduation-cap text-lg"></i>
+            </a>
+          </div>
+
+          <!-- Research Interests Tags -->
+          <div class="mt-6">
+            <p class="text-xs text-muted uppercase tracking-wider mb-2 font-semibold">Research Interests</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Neuro-Symbolic AI
+              </span>
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Theorem Proving
+              </span>
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Mathematical Reasoning
+              </span>
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Formal Verification
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: About Me -->
+        <div>
+          <section id="about" class="mb-10">
+            <div class="section-header mb-4">
+              <h2 class="font-serif text-2xl font-bold text-primary">About Me</h2>
+            </div>
+            <div class="formal-font text-slate-700 space-y-4">
+              <p>
+                I am a postdoctoral researcher in the <a href="https://inf.ethz.ch/" class="text-accent hover:text-accent-dark underline">Department of Computer Science</a> at <a href="https://ethz.ch/en.html" class="text-accent hover:text-accent-dark underline">ETH Zürich</a>, working with <a href="https://people.inf.ethz.ch/suz/" class="text-accent hover:text-accent-dark underline">Prof. Zhendong Su</a>. I obtained my Ph.D. from <a href="https://www.nju.edu.cn/en/" class="text-accent hover:text-accent-dark underline">Nanjing University</a> under the supervision of Prof. Xiaoxing Ma and Prof. Jian Lü, and hold a B.Sc. in Mathematics from Southwest Jiaotong University.
+              </p>
+            </div>
+          </section>
+
+          <!-- Research Thrust -->
+          <section class="mb-10">
+            <div class="section-header mb-4">
+              <h2 class="font-serif text-2xl font-bold text-primary">🚀 Research Thrust</h2>
+            </div>
+            <div class="formal-font text-slate-700 space-y-4">
+              <p>
+                Before the advent of large language models (LLMs), my research primarily focused on the integration of deep learning and software engineering, particularly quality assurance for deep learning models and software engineering automation via deep learning. Additionally, I worked on mathematical optimization, developing fast algorithms and theoretical analysis for minimax/bilevel optimization in large-scale machine learning.
+              </p>
+              <p>
+                In the LLM era, my research has shifted to <strong>neuro-symbolic AI</strong>. Beyond exploring the theoretical foundations of neuro-symbolic learning, I am particularly focused on its applications, including <strong>theorem proving</strong>, <strong>mathematical reasoning</strong>, and <strong>formal verification</strong>.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="latest-news" class="mb-16">
+      <div class="section-header mb-6 flex items-center justify-between">
+        <h2 class="font-serif text-2xl font-bold text-primary">🔥 News</h2>
+        <a href="pages/all-news.html" class="text-sm text-muted hover:text-accent transition-colors">View All →</a>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div id="news-container" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">📄 Publications</h2>
+        <p class="text-sm text-muted mt-1">(* equal contribution, † project leader)</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="publications-list"></div>
+      </div>
+    </section>
+
+    <!-- Honors Section -->
+    <section id="honors" class="mb-16">
+      <div class="section-header mb-6 flex items-center justify-between">
+        <h2 class="font-serif text-2xl font-bold text-primary">🏆 Honors & Awards</h2>
+        <a href="pages/all-honors.html" class="text-sm text-muted hover:text-accent transition-colors">View All →</a>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div id="honors-container"></div>
+      </div>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">💼 Academic Service</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-6">
+          <div class="service-category">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-pen-fancy text-accent text-sm"></i>
+              </div>
+              <div>
+                <h3>Program Committee / Reviewer</h3>
+                <div class="service-items">
+                  NeurIPS 2023-2025, ICML 2024-2025, ICLR 2023-2025
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-category">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-chalkboard-teacher text-accent text-sm"></i>
+              </div>
+              <div>
+                <h3>Teaching Assistant</h3>
+                <div class="service-items">
+                  Discrete Mathematics (2020, 2021, 2022), Nanjing University
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">🎓 Education & Experience</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-8">
+          <!-- Postdoc -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-flask text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">Postdoctoral Researcher</h3>
+                  <p class="text-sm text-muted">ETH Zürich, Switzerland</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2025 - Present</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Supervisor: Prof. Zhendong Su</p>
+            </div>
+          </div>
+
+          <!-- Research Intern -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-building text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">Research Intern, Systems Research Group</h3>
+                  <p class="text-sm text-muted">Microsoft Research Asia, Beijing, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Jul 2023 - Dec 2024</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Mentor: Dr. Fan Yang</p>
+            </div>
+          </div>
+
+          <!-- PhD -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-graduation-cap text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">Ph.D. in Computer Science</h3>
+                  <p class="text-sm text-muted">Nanjing University, Nanjing, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2020 - Jun 2025</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Advisors: Prof. Xiaoxing Ma and Prof. Jian Lü</p>
+            </div>
+          </div>
+
+          <!-- MSc -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-graduation-cap text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">M.Sc. in Software Engineering</h3>
+                  <p class="text-sm text-muted">Nanjing University, Nanjing, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2017 - Jun 2020</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Advisor: Prof. Xiaoxing Ma</p>
+            </div>
+          </div>
+
+          <!-- BSc -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-graduation-cap text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">B.Sc. in Mathematics and Applied Mathematics</h3>
+                  <p class="text-sm text-muted">Southwest Jiaotong University, Chengdu, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2013 - Jun 2017</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Advisor: Prof. Chengjing Wang</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">📬 Contact</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-4">
+          <h3 class="font-semibold text-primary">Contact Information</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-envelope text-accent text-sm w-5 text-center"></i>
+              <a href="mailto:zenan.li@inf.ethz.ch" class="text-sm text-slate-600 hover:text-accent transition-colors">zenan.li@inf.ethz.ch</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-accent text-sm w-5 text-center mt-1"></i>
+              <span class="text-sm text-slate-600">Department of Computer Science<br>ETH Zürich<br>Zürich, Switzerland</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 text-center">
+      <p class="text-sm text-muted">&copy; <span id="current-year">2026</span> Zenan Li. All rights reserved.</p>
+      <p class="text-xs text-slate-400 mt-1">Powered by <a href="https://github.com/yihangtao/AcaNova-X" class="hover:text-accent transition-colors">AcaNova-X</a> Template</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

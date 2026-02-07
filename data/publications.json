@@ -1,0 +1,189 @@
+[
+  {
+    "title": "Neuro-Symbolic Proof Generation for Scaling Systems Software Verification",
+    "authors": "Baoding He, <b>Zenan Li</b>, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su",
+    "venue": "In submission",
+    "year": "",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": []
+  },
+  {
+    "title": "Reviving DSP for Advanced Theorem Proving in the Era of Reasoning Models",
+    "authors": "Chenrui Cao, Liangcheng Song, <b>Zenan Li</b>, Xinyi Le, Xian Zhang, Hui Xue, and Fan Yang",
+    "venue": "NeurIPS 2025",
+    "year": "2025",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2506.11487" },
+      { "text": "Code", "link": "https://github.com/microsoft/DSP-Plus" }
+    ]
+  },
+  {
+    "title": "A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning",
+    "authors": "Zhi Zhou, Tan Yuhao, <b>Zenan Li</b>†, Yuan Yao, Lan-Zhe Guo, Yu-Feng Li, and Xiaoxing Ma",
+    "venue": "NeurIPS 2025",
+    "year": "2025",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2502.00511" },
+      { "text": "Code", "link": "https://github.com/WNJXYK/RPC/" }
+    ]
+  },
+  {
+    "title": "Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning",
+    "authors": "<b>Zenan Li</b>, Zhaoyu Li, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, and Xiaoxing Ma",
+    "venue": "ICLR 2025",
+    "year": "2025",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2502.13834" },
+      { "text": "Code", "link": "https://arxiv.org/abs/2502.13834" }
+    ]
+  },
+  {
+    "title": "Decoupling Training-Free Guided Diffusion by ADMM",
+    "authors": "Youyuan Zhang, Zehua Liu, <b>Zenan Li</b>, Zhaoyu Li, James J Clark, and Xujie Si",
+    "venue": "CVPR 2025",
+    "year": "2025",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2411.12773" },
+      { "text": "Code", "link": "https://github.com/youyuan-zhang/ADMMDiff" }
+    ]
+  },
+  {
+    "title": "Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency",
+    "authors": "<b>Zenan Li</b>, Yifan Wu, Zhaoyu Li, Xinming Wei, Xian Zhang, Fan Yang, and Xiaoxing Ma",
+    "venue": "NeurIPS 2024",
+    "year": "2024",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2410.20936" },
+      { "text": "Code", "link": "https://github.com/Miracle-Messi/Isa-AutoFormal" }
+    ]
+  },
+  {
+    "title": "Neuro-Symbolic Data Generation for Math Reasoning",
+    "authors": "<b>Zenan Li</b>, Zhi Zhou, Yuan Yao, Xian Zhang, Yu-Feng Li, Chun Cao, Fan Yang, and Xiaoxing Ma",
+    "venue": "NeurIPS 2024",
+    "year": "2024",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2412.04857" }
+    ]
+  },
+  {
+    "title": "A Survey on Deep Learning for Theorem Proving",
+    "authors": "Zhaoyu Li, Jialiang Sun, Logan Murphy, Qidong Su, <b>Zenan Li</b>, Xian Zhang, Kaiyu Yang, and Xujie Si",
+    "venue": "COLM 2024",
+    "year": "2024",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2404.09939" },
+      { "text": "Code", "link": "https://github.com/zhaoyu-li/DL4TP" }
+    ]
+  },
+  {
+    "title": "Neuro-symbolic Learning Yielding Logical Constraints",
+    "authors": "<b>Zenan Li</b>, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü",
+    "venue": "NeurIPS 2023",
+    "year": "2023",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2410.20957" },
+      { "text": "Code", "link": "https://github.com/Lizn-zn/Nesy-Programming" }
+    ]
+  },
+  {
+    "title": "Learning with Logical Constraints but without Shortcut Satisfaction",
+    "authors": "<b>Zenan Li</b>, Zehua Liu, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü",
+    "venue": "ICLR 2023",
+    "year": "2023",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2403.00329" },
+      { "text": "Code", "link": "https://github.com/SoftWiser-group/NeSy-without-Shortcuts" }
+    ]
+  },
+  {
+    "title": "Softened Symbol Grounding for Neuro-symbolic Systems",
+    "authors": "<b>Zenan Li</b>, Yuan Yao, Taolue Chen, Jingwei Xu, Chun Cao, Xiaoxing Ma, and Jian Lü",
+    "venue": "ICLR 2023",
+    "year": "2023",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2403.00323" },
+      { "text": "Code", "link": "https://github.com/SoftWiser-group/Soften-NeSy-learning" }
+    ]
+  },
+  {
+    "title": "Lightweight Approaches to DNN Regression Error Reduction: An Uncertainty Alignment Perspective",
+    "authors": "<b>Zenan Li</b>, Maorun Zhang, Jingwei Xu, Yuan Yao, Chun Cao, Taolue Chen, Xiaoxing Ma, and Jian Lü",
+    "venue": "ICSE 2023",
+    "year": "2023",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://ieeexplore.ieee.org/document/10172764" },
+      { "text": "Code", "link": "https://github.com/Lizn-zn/Uncertainty-Alignment" }
+    ]
+  },
+  {
+    "title": "Fair Representation Learning: An Alternative to Mutual Information",
+    "authors": "Ji Liu, <b>Zenan Li</b>, Yuan Yao, Feng Xu, Xiaoxing Ma, Miao Xu, and Hanghang Tong",
+    "venue": "KDD 2022",
+    "year": "2022",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://dl.acm.org/doi/10.1145/3534678.3539302" },
+      { "text": "Code", "link": "https://github.com/SoftWiser-group/FairDisCo" }
+    ]
+  },
+  {
+    "title": "Operational Calibration: Debugging Confidence Errors for DNNs in the Field",
+    "authors": "<b>Zenan Li</b>, Xiaoxing Ma, Chang Xu, Jingwei Xu, Chun Cao, and Jian Lü",
+    "venue": "ESEC/FSE 2020",
+    "year": "2020",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/1910.02352" },
+      { "text": "Code", "link": "https://github.com/Lizn-zn/Op-QA" }
+    ]
+  },
+  {
+    "title": "Boosting Operational DNN Testing Efficiency Through Conditioning",
+    "authors": "<b>Zenan Li</b>, Xiaoxing Ma, Chang Xu, Chun Cao, Jingwei Xu, and Jian Lü",
+    "venue": "ESEC/FSE 2019",
+    "year": "2019",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/1906.02533" },
+      { "text": "Code", "link": "https://github.com/Lizn-zn/DNNOpAcc" }
+    ]
+  },
+  {
+    "title": "Structural Coverage Criteria for Neural Networks Could Be Misleading",
+    "authors": "<b>Zenan Li</b>, Xiaoxing Ma, Chang Xu, and Chun Cao",
+    "venue": "ICSE-NIER 2019",
+    "year": "2019",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://dl.acm.org/doi/10.1109/ICSE-NIER.2019.00031" }
+    ]
+  }
+]
