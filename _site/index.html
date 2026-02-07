@@ -1,294 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zenan Li - Postdoctoral Researcher at ETH Zürich. Research on neuro-symbolic AI, LLM-based theorem proving, and mathematical reasoning.">
+  <title>Zenan Li - Academic Homepage</title>
 
-  <title>Zenan Li</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome-all.min.css">
-
-  <!-- Favicon -->
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico"> -->
-
-  <!-- Google Analytics -->
-  
-
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#fefffe',
+            foreground: '#0f172a',
+            primary: '#1e293b',
+            accent: '#d4a562',
+            'accent-dark': '#b88a4d',
+            muted: '#64748b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Crimson Text', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
+<body class="bg-slate-50 text-slate-900 antialiased">
 
+  <!-- Top Navigation -->
+  <nav class="top-nav glass fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#homepage" class="font-serif text-xl font-bold text-primary tracking-wide">
+        Zenan Li
+      </a>
 
-  <body>
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="/">
-          <h1 class="nav-title">Zenan Li</h1>
-        </a>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="/misc">Links</a></li>
-        </ul>
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-6 nav-links text-sm">
+        <a href="#homepage" class="nav-item">Homepage</a>
+        <a href="#about" class="nav-item">About Me</a>
+        <a href="#latest-news" class="nav-item">News</a>
+        <a href="#publications" class="nav-item">Publications</a>
+        <a href="#honors" class="nav-item">Honors</a>
+        <a href="#service" class="nav-item">Service</a>
+        <a href="#education" class="nav-item">Education</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="#misc" class="nav-item">Misc</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden mobile-menu-btn text-slate-600">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 nav-links">
+      <div class="flex flex-col space-y-3 text-sm">
+        <a href="#homepage" class="nav-item">Homepage</a>
+        <a href="#about" class="nav-item">About Me</a>
+        <a href="#latest-news" class="nav-item">News</a>
+        <a href="#publications" class="nav-item">Publications</a>
+        <a href="#honors" class="nav-item">Honors</a>
+        <a href="#service" class="nav-item">Service</a>
+        <a href="#education" class="nav-item">Education</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="#misc" class="nav-item">Misc</a>
+      </div>
     </div>
   </nav>
 
-    <main>
-      <div class="about academic-page">
-  <div class="sidebar">
-    <div class="profile-card">
-      <img class="selfie" alt="Zenan Li" src="images/bio-photo.jpg" />
-      <h1 class="profile-name">Zenan Li</h1>
-      <p class="profile-title">Postdoctoral Researcher, ETH Zürich</p>
-      
-      <div class="profile-contact">
-        <div class="contact-item">
-          <i class="fa fa-map-marker-alt"></i>
-          <span>CNB H 105, ETH Zürich</span>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+
+    <!-- Hero Section -->
+    <section id="homepage" class="mb-16">
+      <div class="grid-layout">
+        <!-- Left: Profile Image & Quick Info -->
+        <div class="flex flex-col items-center lg:items-start">
+          <div class="profile-image-container mb-6">
+            <img src="images/bio-photo.jpg" alt="Zenan Li"
+                 class="w-48 h-48 rounded-2xl object-cover shadow-lg border-4 border-white">
+          </div>
+
+          <div class="text-center lg:text-left">
+            <h1 class="font-serif text-2xl font-bold text-primary mb-1">Zenan Li</h1>
+            <p class="text-muted text-sm mb-1">Postdoctoral Researcher</p>
+            <p class="text-muted text-sm mb-4">ETH Zürich</p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-4 mt-2">
+            <a href="mailto:zenan.li@inf.ethz.ch" class="text-muted hover:text-accent transition-colors" title="Email">
+              <i class="fas fa-envelope text-lg"></i>
+            </a>
+            <a href="https://github.com/Lizn-zn" class="text-muted hover:text-accent transition-colors" title="GitHub">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=eu4eqTcAAAAJ&hl=zh-CN" class="text-muted hover:text-accent transition-colors" title="Google Scholar">
+              <i class="fas fa-graduation-cap text-lg"></i>
+            </a>
+          </div>
+
+          <!-- Research Interests Tags -->
+          <div class="mt-6">
+            <p class="text-xs text-muted uppercase tracking-wider mb-2 font-semibold">Research Interests</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Neuro-Symbolic AI
+              </span>
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Theorem Proving
+              </span>
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Mathematical Reasoning
+              </span>
+              <span class="text-xs bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-full">
+                Formal Verification
+              </span>
+            </div>
+          </div>
         </div>
-        
-        <div class="contact-item">
-          <i class="fa fa-envelope"></i>
-          <a href="mailto:zenan.li@inf.ethz.ch">zenan.li@inf.ethz.ch</a>
+
+        <!-- Right: About Me -->
+        <div>
+          <section id="about" class="mb-10">
+            <div class="section-header mb-4">
+              <h2 class="font-serif text-2xl font-bold text-primary">About Me</h2>
+            </div>
+            <div class="formal-font text-slate-700 space-y-4">
+              <p>
+                I am a postdoctoral researcher in the <a href="https://inf.ethz.ch/" class="text-accent hover:text-accent-dark underline">Department of Computer Science</a> at <a href="https://ethz.ch/en.html" class="text-accent hover:text-accent-dark underline">ETH Zürich</a>, working with <a href="https://people.inf.ethz.ch/suz/" class="text-accent hover:text-accent-dark underline">Prof. Zhendong Su</a>. I obtained my Ph.D. from <a href="https://www.nju.edu.cn/en/" class="text-accent hover:text-accent-dark underline">Nanjing University</a> under the supervision of Prof. Xiaoxing Ma and Prof. Jian Lü, and hold a B.Sc. in Mathematics from Southwest Jiaotong University.
+              </p>
+            </div>
+          </section>
+
+          <!-- Research Thrust -->
+          <section class="mb-10">
+            <div class="section-header mb-4">
+              <h2 class="font-serif text-2xl font-bold text-primary">🚀 Research Thrust</h2>
+            </div>
+            <div class="formal-font text-slate-700 space-y-4">
+              <p>
+                Before the advent of large language models (LLMs), my research primarily focused on the integration of deep learning and software engineering, particularly quality assurance for deep learning models and software engineering automation via deep learning. Additionally, I worked on mathematical optimization, developing fast algorithms and theoretical analysis for minimax/bilevel optimization in large-scale machine learning.
+              </p>
+              <p>
+                In the LLM era, my research has shifted to <strong>neuro-symbolic AI</strong>. Beyond exploring the theoretical foundations of neuro-symbolic learning, I am particularly focused on its applications, including <strong>theorem proving</strong>, <strong>mathematical reasoning</strong>, and <strong>formal verification</strong>.
+              </p>
+            </div>
+          </section>
         </div>
-        
-        
-        <div class="contact-item">
-          <i class="fas fa-graduation-cap"></i>
-          <a href="https://scholar.google.com/citations?user=eu4eqTcAAAAJ&hl=zh-CN">Google Scholar</a>
-        </div>
-        
-        
-        <div class="contact-item">
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/Lizn-zn">GitHub</a>
-        </div>
-        
-        
       </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="latest-news" class="mb-16">
+      <div class="section-header mb-6 flex items-center justify-between">
+        <h2 class="font-serif text-2xl font-bold text-primary">🔥 News</h2>
+        <a href="pages/all-news.html" class="text-sm text-muted hover:text-accent transition-colors">View All →</a>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div id="news-container" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">📄 Publications</h2>
+        <p class="text-sm text-muted mt-1">(* equal contribution, † project leader)</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="publications-list"></div>
+      </div>
+    </section>
+
+    <!-- Honors Section -->
+    <section id="honors" class="mb-16">
+      <div class="section-header mb-6 flex items-center justify-between">
+        <h2 class="font-serif text-2xl font-bold text-primary">🏆 Honors & Awards</h2>
+        <a href="pages/all-honors.html" class="text-sm text-muted hover:text-accent transition-colors">View All →</a>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div id="honors-container"></div>
+      </div>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">💼 Academic Service</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-6">
+          <div class="service-category">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-pen-fancy text-accent text-sm"></i>
+              </div>
+              <div>
+                <h3>Program Committee / Reviewer</h3>
+                <div class="service-items">
+                  NeurIPS 2023-2025, ICML 2024-2025, ICLR 2023-2025
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-category">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-chalkboard-teacher text-accent text-sm"></i>
+              </div>
+              <div>
+                <h3>Teaching Assistant</h3>
+                <div class="service-items">
+                  Discrete Mathematics (2020, 2021, 2022), Nanjing University
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">🎓 Education & Experience</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-8">
+          <!-- Postdoc -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-flask text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">Postdoctoral Researcher</h3>
+                  <p class="text-sm text-muted">ETH Zürich, Switzerland</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2025 - Present</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Supervisor: Prof. Zhendong Su</p>
+            </div>
+          </div>
+
+          <!-- Research Intern -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-building text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">Research Intern, Systems Research Group</h3>
+                  <p class="text-sm text-muted">Microsoft Research Asia, Beijing, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Jul 2023 - Dec 2024</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Mentor: Dr. Fan Yang</p>
+            </div>
+          </div>
+
+          <!-- PhD -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-graduation-cap text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">Ph.D. in Computer Science</h3>
+                  <p class="text-sm text-muted">Nanjing University, Nanjing, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2020 - Jun 2025</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Advisors: Prof. Xiaoxing Ma and Prof. Jian Lü</p>
+            </div>
+          </div>
+
+          <!-- MSc -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-graduation-cap text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">M.Sc. in Software Engineering</h3>
+                  <p class="text-sm text-muted">Nanjing University, Nanjing, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2017 - Jun 2020</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Advisor: Prof. Xiaoxing Ma</p>
+            </div>
+          </div>
+
+          <!-- BSc -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-graduation-cap text-accent text-sm"></i>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-primary text-sm">B.Sc. in Mathematics and Applied Mathematics</h3>
+                  <p class="text-sm text-muted">Southwest Jiaotong University, Chengdu, China</p>
+                </div>
+                <span class="text-xs text-muted whitespace-nowrap">Sep 2013 - Jun 2017</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-1">Advisor: Prof. Chengjing Wang</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">📬 Contact</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-4">
+          <h3 class="font-semibold text-primary">Contact Information</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-envelope text-accent text-sm w-5 text-center"></i>
+              <a href="mailto:zenan.li@inf.ethz.ch" class="text-sm text-slate-600 hover:text-accent transition-colors">zenan.li@inf.ethz.ch</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-accent text-sm w-5 text-center mt-1"></i>
+              <span class="text-sm text-slate-600">CNB H 105<br>ETH Zürich<br>Zürich, Switzerland</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Misc Section -->
+    <section id="misc" class="mb-16">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-2xl font-bold text-primary">📌 Useful Links</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-primary text-sm mb-2">Theorem Proving</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+              <li><a href="https://leanprover.zulipchat.com/" target="_blank" class="text-accent hover:text-accent-dark underline">The official Zulip channel for Lean 4</a></li>
+              <li><a href="https://verus-lang.github.io/verus/guide/" target="_blank" class="text-accent hover:text-accent-dark underline">The tutorial for Verus</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary text-sm mb-2">Deep Learning</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+              <li><a href="https://www.tengjiaye.com/mlbook.html" target="_blank" class="text-accent hover:text-accent-dark underline">Theoretical Machine Learning: A Handbook for Everyone (in Chinese)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 text-center">
+      <p class="text-sm text-muted">&copy; <span id="current-year">2026</span> Zenan Li. All rights reserved.</p>
+      <p class="text-xs text-slate-400 mt-1">Powered by <a href="https://github.com/yihangtao/AcaNova-X" class="hover:text-accent transition-colors">AcaNova-X</a> Template</p>
     </div>
-  </div>
-
-  <div class="main-content">
-    <h2 id="about-me">About Me</h2>
-
-<p>I am a postdoctoral researcher in the <a href="https://inf.ethz.ch/">Department of Computer Science</a> at <a href="https://ethz.ch/en.html">ETH Zürich</a>, supervised by <a href="https://people.inf.ethz.ch/suz/">Prof. Zhendong Su</a>. I received my Ph.D. from <a href="https://www.nju.edu.cn/en/">Nanjing University</a>, advised by Prof. Xiaoxing Ma and Prof. Jian Lü. Prior to that, I obtained my B.Sc. in Mathematics from Southwest Jiaotong University and M.Sc. from the Software Institute of Nanjing University.</p>
-
-<p>My research sits at the intersection of <strong>AI and formal methods</strong>, with a focus on <strong>neuro-symbolic AI</strong>, <strong>LLM-based theorem proving</strong>, and <strong>mathematical reasoning</strong>.</p>
-
-<h2 id="research-interests">Research Interests</h2>
-
-<p>Before the advent of large language models (LLMs), my research primarily focused on the integration of deep learning and software engineering, particularly quality assurance for deep learning models and software engineering automation via deep learning. Additionally, I worked on mathematical optimization, developing fast algorithms and theoretical analysis for minimax/bilevel optimization in large-scale machine learning.</p>
-
-<p>In the LLM era, my research has shifted to neuro-symbolic AI. Beyond exploring the theoretical foundations of neuro-symbolic learning, I am particularly focused on its applications, including LLM-based mathematical reasoning, theorem proving, and verified code generation.</p>
-
-<h2 id="news">News</h2>
-
-<ul>
-  <li><strong>[2025]</strong> One paper accepted at <strong>CVPR 2025</strong>.</li>
-  <li><strong>[2025]</strong> One paper accepted at <strong>ICLR 2025</strong>.</li>
-  <li><strong>[2025]</strong> Two papers accepted at <strong>NeurIPS 2025</strong>.</li>
-  <li><strong>[2024]</strong> Two papers accepted at <strong>NeurIPS 2024</strong>.</li>
-  <li><strong>[2024]</strong> One paper accepted at <strong>COLM 2024</strong>.</li>
-</ul>
-
-<h2 id="selected-publications">Selected Publications</h2>
-
-<p><strong>Neuro-Symbolic Proof Generation for Scaling Systems Software Verification</strong></p>
-
-<p>Baoding He, <strong>Zenan Li</strong>, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su</p>
-
-<p><em>In submission</em></p>
-
-<p><strong>Reviving DSP for Advanced Theorem Proving in the Era of Reasoning Models</strong> <a href="https://arxiv.org/abs/2506.11487">[paper]</a> <a href="https://github.com/microsoft/DSP-Plus">[code]</a></p>
-
-<p>Chenrui Cao, Liangcheng Song, <strong>Zenan Li</strong>, Xinyi Le, Xian Zhang, Hui Xue, and Fan Yang</p>
-
-<p><em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2025</p>
-
-<p><strong>A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning</strong> <a href="https://arxiv.org/abs/2502.00511">[paper]</a> <a href="https://github.com/WNJXYK/RPC/">[code]</a></p>
-
-<p>Zhi Zhou, Tan Yuhao, <strong>Zenan Li</strong>, Yuan Yao, Lan-Zhe Guo, Yu-Feng Li, and Xiaoxing Ma</p>
-
-<p><em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2025</p>
-
-<p><strong>Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning</strong> <a href="https://arxiv.org/abs/2502.13834">[paper][code]</a></p>
-
-<p><strong>Zenan Li</strong>, Zhaoyu Li, Wen Tang, Xian Zhang, Yuan Yao, Xujie Si, Fan Yang, Kaiyu Yang, and Xiaoxing Ma</p>
-
-<p><em>International Conference on Learning Representations (ICLR)</em>, 2025</p>
-
-<p><strong>Decoupling Training-Free Guided Diffusion by ADMM</strong> <a href="https://arxiv.org/abs/2411.12773">[paper]</a> <a href="https://github.com/youyuan-zhang/ADMMDiff">[code]</a></p>
-
-<p>Youyuan Zhang, Zehua Liu, <strong>Zenan Li</strong>, Zhaoyu Li, James J Clark, and Xujie Si</p>
-
-<p><em>Computer Vision and Pattern Recognition Conference (CVPR)</em>, 2025</p>
-
-<p><strong>Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency</strong> <a href="https://arxiv.org/abs/2410.20936">[paper]</a> <a href="https://github.com/Miracle-Messi/Isa-AutoFormal">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Yifan Wu, Zhaoyu Li, Xinming Wei, Xian Zhang, Fan Yang, and Xiaoxing Ma</p>
-
-<p><em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2024</p>
-
-<p><strong>Neuro-Symbolic Data Generation for Math Reasoning</strong> <a href="https://arxiv.org/abs/2412.04857">[paper]</a></p>
-
-<p><strong>Zenan Li</strong>, Zhi Zhou, Yuan Yao, Xian Zhang, Yu-Feng Li, Chun Cao, Fan Yang, and Xiaoxing Ma</p>
-
-<p><em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2024</p>
-
-<p><strong>A Survey on Deep Learning for Theorem Proving</strong> <a href="https://arxiv.org/abs/2404.09939">[paper]</a> <a href="https://github.com/zhaoyu-li/DL4TP">[code]</a></p>
-
-<p>Zhaoyu Li, Jialiang Sun, Logan Murphy, Qidong Su, <strong>Zenan Li</strong>, Xian Zhang, Kaiyu Yang, and Xujie Si</p>
-
-<p><em>Conference on Language Modeling (COLM)</em>, 2024</p>
-
-<p><strong>Neuro-symbolic Learning Yielding Logical Constraints</strong> <a href="https://arxiv.org/abs/2410.20957">[paper]</a> <a href="https://github.com/Lizn-zn/Nesy-Programming">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Yunpeng Huang, Zhaoyu Li, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü</p>
-
-<p><em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2023</p>
-
-<p><strong>Learning with Logical Constraints but without Shortcut Satisfaction</strong> <a href="https://arxiv.org/abs/2403.00329">[paper]</a> <a href="https://github.com/SoftWiser-group/NeSy-without-Shortcuts">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Zehua Liu, Yuan Yao, Jingwei Xu, Taolue Chen, Xiaoxing Ma, and Jian Lü</p>
-
-<p><em>International Conference on Learning Representations (ICLR)</em>, 2023</p>
-
-<p><strong>Softened Symbol Grounding for Neuro-symbolic Systems</strong> <a href="https://arxiv.org/abs/2403.00323">[paper]</a> <a href="https://github.com/SoftWiser-group/Soften-NeSy-learning">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Yuan Yao, Taolue Chen, Jingwei Xu, Chun Cao, Xiaoxing Ma, and Jian Lü</p>
-
-<p><em>International Conference on Learning Representations (ICLR)</em>, 2023</p>
-
-<p><strong>Lightweight Approaches to DNN Regression Error Reduction: An Uncertainty Alignment Perspective</strong> <a href="https://ieeexplore.ieee.org/document/10172764">[paper]</a> <a href="https://github.com/Lizn-zn/Uncertainty-Alignment">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Maorun Zhang, Jingwei Xu, Yuan Yao, Chun Cao, Taolue Chen, Xiaoxing Ma, and Jian Lü</p>
-
-<p><em>International Conference on Software Engineering (ICSE)</em>, 2023</p>
-
-<p><strong>Fair Representation Learning: An Alternative to Mutual Information</strong> <a href="https://dl.acm.org/doi/10.1145/3534678.3539302">[paper]</a> <a href="https://github.com/SoftWiser-group/FairDisCo">[code]</a></p>
-
-<p>Ji Liu, <strong>Zenan Li</strong>, Yuan Yao, Feng Xu, Xiaoxing Ma, Miao Xu, and Hanghang Tong</p>
-
-<p><em>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</em>, 2022</p>
-
-<p><strong>Operational Calibration: Debugging Confidence Errors for DNNs in the Field</strong> <a href="https://arxiv.org/abs/1910.02352">[paper]</a> <a href="https://github.com/Lizn-zn/Op-QA">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Xiaoxing Ma, Chang Xu, Jingwei Xu, Chun Cao, and Jian Lü</p>
-
-<p><em>ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)</em>, 2020</p>
-
-<p><strong>Boosting Operational DNN Testing Efficiency Through Conditioning</strong> <a href="https://arxiv.org/abs/1906.02533">[paper]</a> <a href="https://github.com/Lizn-zn/DNNOpAcc">[code]</a></p>
-
-<p><strong>Zenan Li</strong>, Xiaoxing Ma, Chang Xu, Chun Cao, Jingwei Xu, and Jian Lü</p>
-
-<p><em>ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)</em>, 2019</p>
-
-<p><strong>Structural Coverage Criteria for Neural Networks Could Be Misleading</strong> <a href="https://dl.acm.org/doi/10.1109/ICSE-NIER.2019.00031">[paper]</a></p>
-
-<p><strong>Zenan Li</strong>, Xiaoxing Ma, Chang Xu, and Chun Cao</p>
-
-<p><em>International Conference on Software Engineering, New Ideas and Emerging Results track (ICSE-NIER)</em>, 2019</p>
-
-<h2 id="education--experience">Education &amp; Experience</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Post-doc ResearcherETH Zürich, SwitzerlandSupervisor: Prof. Zhendong Su</td>
-      <td>#### Sep 2025 - Present</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Research Intern, Systems Research GroupMicrosoft Research Asia, Beijing, ChinaMentor: Dr. Fan Yang</td>
-      <td>#### Jul 2023 - Dec 2024</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ph.D. in Computer ScienceNanjing University, Nanjing, ChinaAdvisors: Prof. Xiaoxing Ma and Prof. Jian Lü</td>
-      <td>#### Sep 2020 - Jun 2025</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>M.Sc. in Software EngineeringNanjing University, Nanjing, ChinaAdvisor: Prof. Xiaoxing Ma</td>
-      <td>#### Sep 2017 - Jun 2020</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>B.Sc. in Mathematics and Applied MathematicsSouthwest Jiaotong University, Chengdu, ChinaAdvisor: Prof. Chengjing Wang</td>
-      <td>#### Sep 2013 - Jun 2017</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="honors--service">Honors &amp; Service</h2>
-
-<ul>
-  <li><strong>CCF Outstanding Doctoral Dissertation Award</strong> (Top 10 per year in Computer Science across China)</li>
-  <li><strong>Program Committee / Reviewer:</strong> NeurIPS 2023-2025, ICML 2024-2025, ICLR 2023-2025</li>
-  <li><strong>Teaching Assistant:</strong> Discrete Mathematics (2020, 2021, 2022), Nanjing University</li>
-</ul>
-
-
-  </div>
-</div>
-
-    </main>
-
-    <footer>
-      <span>
-        &copy; <time datetime="2026-02-07 11:32:53 +0800">2026</time> Zenan Li
-      </span>
-    </footer>
-  </body>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
