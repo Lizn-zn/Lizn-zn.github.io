@@ -30,18 +30,6 @@
     ]
   },
   {
-    "title": "Neuro-Symbolic Proof Generation for Scaling Systems Software Verification",
-    "authors": "Baoding He*, <b>Zenan Li*</b>, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su",
-    "venue": "In submission",
-    "year": "2026",
-    "highlight": "",
-    "thumbnail": "",
-    "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2602.09464" },
-      { "text": "Code", "link": "TBD" }
-    ]
-  },
-  {
     "title": "Goedel-Code-Prover: Hierarchical Proof Search for Open State-of-the-Art Code Verification",
     "authors": "<b>Zenan Li</b>*, Ziran Yang*, Deyuan He, Haoyu Zhao, Andrew Zhao, Shange Tang, Kaiyu Yang, Aarti Gupta, Zhendong Su, Chi Jin",
     "venue": "In submission",
