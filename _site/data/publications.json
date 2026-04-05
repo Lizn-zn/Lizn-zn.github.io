@@ -1,5 +1,14 @@
 [
   {
+    "title": "AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms",
+    "authors": "Haoyu Zhao, Ziran Yang, Jiawei Li, Deyuan He, <b>Zenan Li</b>, Chi Jin, Venugopal V Veeravalli, Aarti Gupta, Sanjeev Arora",
+    "venue": "In submission",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": []
+  },
+  {
     "title": "Fair Conformal Classification via Learning Representation-Based Groups",
     "authors": "Senrong Xu, Yanke Zhou, Yuhao Tan, <b>Zenan Li</b>, Yuan Yao, Taolue Chen, Feng Xu, and Xiaoxing Ma",
     "venue": "ICLR 2026",
@@ -24,10 +33,37 @@
     "title": "Neuro-Symbolic Proof Generation for Scaling Systems Software Verification",
     "authors": "Baoding He*, <b>Zenan Li*</b>, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su",
     "venue": "In submission",
-    "year": "",
+    "year": "2026",
     "highlight": "",
     "thumbnail": "",
-    "tags": []
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2602.09464" },
+      { "text": "Code", "link": "TBD" }
+    ]
+  },
+  {
+    "title": "Goedel-Code-Prover: Hierarchical Proof Search for Open State-of-the-Art Code Verification",
+    "authors": "<b>Zenan Li</b>*, Ziran Yang*, Deyuan He, Haoyu Zhao, Andrew Zhao, Shange Tang, Kaiyu Yang, Aarti Gupta, Zhendong Su, Chi Jin",
+    "venue": "In submission",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2603.19329" },
+      { "text": "Code", "link": "https://goedelcodeprover.github.io/" }
+    ]
+  },
+  {
+    "title": "Neuro-Symbolic Proof Generation for Scaling Systems Software Verification",
+    "authors": "Baoding He*, <b>Zenan Li</b>*, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su",
+    "venue": "OSDI 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2603.19715" },
+      { "text": "Code", "link": "TBD" }
+    ]
   },
   {
     "title": "Reviving DSP for Advanced Theorem Proving in the Era of Reasoning Models",
