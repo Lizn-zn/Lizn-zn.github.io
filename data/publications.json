@@ -9,27 +9,6 @@
     "tags": []
   },
   {
-    "title": "Fair Conformal Classification via Learning Representation-Based Groups",
-    "authors": "Senrong Xu, Yanke Zhou, Yuhao Tan, <b>Zenan Li</b>, Yuan Yao, Taolue Chen, Feng Xu, and Xiaoxing Ma",
-    "venue": "ICLR 2026",
-    "year": "2026",
-    "highlight": "",
-    "thumbnail": "",
-    "tags": []
-  },
-  {
-    "title": "FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory",
-    "authors": "Xiao-Wen Yang*, Zihao Zhang*, Jianuo Cao, Zhi Zhou, <b>Zenan Li†</b>, Lan-Zhe Guo, Yuan Yao, Taolue Chen, Yu-Feng Li, and Xiaoxing Ma",
-    "venue": "ICLR 2026",
-    "year": "2026",
-    "highlight": "",
-    "thumbnail": "",
-    "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2510.02335" },
-      { "text": "Code", "link": "https://github.com/njuyxw/FormalML" }
-    ]
-  },
-  {
     "title": "Goedel-Code-Prover: Hierarchical Proof Search for Open State-of-the-Art Code Verification",
     "authors": "<b>Zenan Li</b>*, Ziran Yang*, Deyuan He, Haoyu Zhao, Andrew Zhao, Shange Tang, Kaiyu Yang, Aarti Gupta, Zhendong Su, Chi Jin",
     "venue": "In submission",
@@ -51,6 +30,27 @@
     "tags": [
       { "text": "Paper", "link": "https://arxiv.org/abs/2603.19715" },
       { "text": "Code", "link": "TBD" }
+    ]
+  },
+  {
+    "title": "Fair Conformal Classification via Learning Representation-Based Groups",
+    "authors": "Senrong Xu, Yanke Zhou, Yuhao Tan, <b>Zenan Li</b>, Yuan Yao, Taolue Chen, Feng Xu, and Xiaoxing Ma",
+    "venue": "ICLR 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": []
+  },
+  {
+    "title": "FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory",
+    "authors": "Xiao-Wen Yang*, Zihao Zhang*, Jianuo Cao, Zhi Zhou, <b>Zenan Li†</b>, Lan-Zhe Guo, Yuan Yao, Taolue Chen, Yu-Feng Li, and Xiaoxing Ma",
+    "venue": "ICLR 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      { "text": "Paper", "link": "https://arxiv.org/abs/2510.02335" },
+      { "text": "Code", "link": "https://github.com/njuyxw/FormalML" }
     ]
   },
   {

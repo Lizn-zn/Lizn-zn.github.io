@@ -209,10 +209,12 @@ function loadPublications() {
           // Paper/Code Buttons
           if (pub.tags) {
             pub.tags.forEach(tag => {
-              if (tag.link && tag.link !== '#') {
+              const link = (tag.link || '').trim();
+              const isHttp = /^https?:\/\//i.test(link);
+              if (link && link !== '#' && isHttp) {
                 const btn = document.createElement('a');
                 btn.className = 'pub-link-btn';
-                btn.href = tag.link;
+                btn.href = link;
                 btn.target = '_blank';
 
                 if (tag.text === 'Paper') {
@@ -315,7 +317,7 @@ function getVenueShortName(venueStr, year) {
   const conferences = [
     'NeurIPS', 'CVPR', 'ICCV', 'ECCV', 'ICRA', 'AAAI',
     'GLOBECOM', 'INFOCOM', 'MOBICOM',
-    'ICLR', 'ICML', 'ICSE', 'KDD', 'COLM'
+    'ICLR', 'ICML', 'ICSE', 'KDD', 'COLM', 'OSDI'
   ];
   for (const conf of conferences) {
     if (s.toUpperCase().includes(conf.toUpperCase())) {
@@ -407,6 +409,7 @@ function getVenueFullName(venueStr, year) {
   if (s.includes('ESEC') || s.includes('FSE')) return `ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE${yearSuffix})`;
   if (s.includes('KDD')) return `ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD${yearSuffix})`;
   if (s.includes('COLM')) return `Conference on Language Modeling (COLM${yearSuffix})`;
+  if (s.includes('OSDI')) return `USENIX Symposium on Operating Systems Design and Implementation (OSDI${yearSuffix})`;
 
   if (s.toLowerCase().includes('arxiv')) return 'arXiv preprint';
   if (s.toLowerCase().includes('submission')) return 'In submission';
