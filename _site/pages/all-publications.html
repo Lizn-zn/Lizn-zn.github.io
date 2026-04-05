@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Publications - Zenan Li</title>
+
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#fefffe',
+            foreground: '#0f172a',
+            primary: '#1e293b',
+            accent: '#d4a562',
+            'accent-dark': '#b88a4d',
+            muted: '#64748b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Crimson Text', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <nav class="glass fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-3 flex items-center space-x-4 text-sm">
+      <a href="../index.html" class="nav-item">Home</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-primary font-medium">All Publications</span>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+    <section id="all-publications">
+      <div class="section-header mb-6">
+        <h2 class="font-serif text-3xl font-bold text-primary">All Publications</h2>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="publications-list"></div>
+      </div>
+      <div class="mt-6 text-center">
+        <a href="../index.html" class="text-sm text-muted hover:text-accent transition-colors">← Back to Homepage</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 text-center">
+      <p class="text-sm text-muted">&copy; <span id="current-year">2026</span> Zenan Li. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
