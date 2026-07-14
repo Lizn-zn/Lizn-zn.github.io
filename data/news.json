@@ -16,7 +16,7 @@
   },
   {
     "date": "2026",
-    "content": "One paper (about neuro-symbolic proof generation for systems software verification) accepted at <b>OSDI 2026</b>.",
+    "content": "Our work on automated proof search for <b>seL4</b> was accepted at <b>OSDI 2026</b>.",
     "links": []
   },
   {
