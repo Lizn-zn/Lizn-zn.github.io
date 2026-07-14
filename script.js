@@ -277,10 +277,12 @@ function renderPubItem(pub) {
           // Paper/Code Buttons
           if (pub.tags) {
             pub.tags.forEach(tag => {
-              if (tag.link && tag.link !== '#') {
+              const link = (tag.link || '').trim();
+              const isHttp = /^https?:\/\//i.test(link);
+              if (link && link !== '#' && isHttp) {
                 const btn = document.createElement('a');
                 btn.className = 'pub-link-btn';
-                btn.href = tag.link;
+                btn.href = link;
                 btn.target = '_blank';
 
                 if (tag.text === 'Paper') {
@@ -373,7 +375,7 @@ function getVenueShortName(venueStr, year) {
   const conferences = [
     'NeurIPS', 'CVPR', 'ICCV', 'ECCV', 'ICRA', 'AAAI',
     'GLOBECOM', 'INFOCOM', 'MOBICOM',
-    'ICLR', 'ICML', 'ICSE', 'KDD', 'COLM'
+    'ICLR', 'ICML', 'ICSE', 'KDD', 'COLM', 'OSDI'
   ];
   for (const conf of conferences) {
     if (s.toUpperCase().includes(conf.toUpperCase())) {
