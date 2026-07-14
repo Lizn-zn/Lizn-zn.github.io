@@ -127,6 +127,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Function to load publications from JSON
+let ALL_PUBLICATIONS = [];
+let PUB_VIEW_MODE = 'topic'; // 'topic' | 'year'
+
+const CATEGORY_ORDER = ['theorem-proving', 'neuro-symbolic', 'trustworthy-ml'];
+const CATEGORY_NAMES = {
+  'theorem-proving': 'Formal Reasoning & Theorem Proving',
+  'neuro-symbolic': 'Neuro-Symbolic & LLM Reasoning',
+  'trustworthy-ml': 'Trustworthy & Uncertainty-Aware ML'
+};
+
+function pubYearDesc(a, b) {
+  const yearA = a.year ? parseInt(a.year) : 9999;
+  const yearB = b.year ? parseInt(b.year) : 9999;
+  return yearB - yearA;
+}
+
 function loadPublications() {
   let publicationsJsonPath = 'data/publications.json';
   if (window.location.pathname.includes('/pages/')) {
@@ -150,47 +166,99 @@ function loadPublications() {
     })
     .then(publications => {
       console.log('Loaded publications:', publications.length);
+      ALL_PUBLICATIONS = publications;
+      buildPubToggle(publicationsList);
+      renderPublications();
+    })
+    .catch(error => {
+      console.error('Error loading publications data:', error);
+      publicationsList.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
+    });
+}
 
-      let pubsToShow = publications;
+// Build the "By Topic / By Year" toggle above the publications list
+function buildPubToggle(publicationsList) {
+  if (document.querySelector('.pub-view-toggle')) return;
+  const toggle = document.createElement('div');
+  toggle.className = 'pub-view-toggle';
 
-      // Sort by year descending (Preprints/Missing year at top)
-      pubsToShow.sort((a, b) => {
-        const yearA = a.year ? parseInt(a.year) : 9999;
-        const yearB = b.year ? parseInt(b.year) : 9999;
-        return yearB - yearA;
-      });
+  const makeBtn = (mode, label) => {
+    const btn = document.createElement('button');
+    btn.className = 'pub-toggle-btn' + (PUB_VIEW_MODE === mode ? ' active' : '');
+    btn.textContent = label;
+    btn.dataset.mode = mode;
+    btn.onclick = () => {
+      if (PUB_VIEW_MODE === mode) return;
+      PUB_VIEW_MODE = mode;
+      document.querySelectorAll('.pub-toggle-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.mode === mode));
+      renderPublications();
+    };
+    return btn;
+  };
 
-      // Group by year
-      const pubsByYear = {};
-      pubsToShow.forEach(pub => {
-        const year = pub.year || 'Preprint';
-        if (!pubsByYear[year]) {
-          pubsByYear[year] = [];
-        }
-        pubsByYear[year].push(pub);
-      });
+  toggle.appendChild(makeBtn('topic', 'By Topic'));
+  toggle.appendChild(makeBtn('year', 'By Year'));
+  publicationsList.parentNode.insertBefore(toggle, publicationsList);
+}
 
-      // Get sorted years
-      const sortedYears = Object.keys(pubsByYear).sort((a, b) => {
-        if (a === 'Preprint') return -1;
-        if (b === 'Preprint') return 1;
-        return b - a;
-      });
+// Render one group (a header + list of publications)
+function renderPubGroup(publicationsList, headerText, pubs, headerClass) {
+  const group = document.createElement('div');
+  group.className = 'pub-year-group';
 
-      // Render groups
-      sortedYears.forEach(year => {
-        const yearGroup = document.createElement('div');
-        yearGroup.className = 'pub-year-group';
+  const header = document.createElement('h3');
+  header.className = headerClass || 'pub-year-header';
+  header.textContent = headerText;
+  group.appendChild(header);
 
-        const yearHeader = document.createElement('h3');
-        yearHeader.className = 'pub-year-header';
-        yearHeader.textContent = `-${year}-`;
-        yearGroup.appendChild(yearHeader);
+  const ul = document.createElement('ul');
+  ul.className = 'pub-list-ul';
+  pubs.forEach(pub => ul.appendChild(renderPubItem(pub)));
+  group.appendChild(ul);
 
-        const ul = document.createElement('ul');
-        ul.className = 'pub-list-ul';
+  publicationsList.appendChild(group);
+}
 
-        pubsByYear[year].forEach(pub => {
+function renderPublications() {
+  const publicationsList = document.querySelector('.publications-list');
+  if (!publicationsList) return;
+  publicationsList.innerHTML = '';
+
+  if (PUB_VIEW_MODE === 'topic') {
+    // Group by category, most recent first within each
+    const byCat = {};
+    ALL_PUBLICATIONS.forEach(pub => {
+      const c = pub.category || 'other';
+      (byCat[c] = byCat[c] || []).push(pub);
+    });
+    const cats = CATEGORY_ORDER.filter(c => byCat[c]);
+    Object.keys(byCat).forEach(c => { if (!cats.includes(c)) cats.push(c); });
+    cats.forEach(cat => {
+      const pubs = byCat[cat].slice().sort(pubYearDesc);
+      renderPubGroup(publicationsList, CATEGORY_NAMES[cat] || cat, pubs, 'pub-year-header pub-topic-header');
+    });
+  } else {
+    // Group by year descending (Preprints/Missing year at top)
+    const sorted = ALL_PUBLICATIONS.slice().sort(pubYearDesc);
+    const byYear = {};
+    sorted.forEach(pub => {
+      const year = pub.year || 'Preprint';
+      (byYear[year] = byYear[year] || []).push(pub);
+    });
+    const years = Object.keys(byYear).sort((a, b) => {
+      if (a === 'Preprint') return -1;
+      if (b === 'Preprint') return 1;
+      return b - a;
+    });
+    years.forEach(year => {
+      renderPubGroup(publicationsList, `-${year}-`, byYear[year], 'pub-year-header');
+    });
+  }
+}
+
+// Build a single publication <li> element
+function renderPubItem(pub) {
           const li = document.createElement('li');
           li.className = 'pub-list-item';
 
@@ -292,17 +360,7 @@ function loadPublications() {
             li.appendChild(thumbBox);
           }
 
-          ul.appendChild(li);
-        });
-
-        yearGroup.appendChild(ul);
-        publicationsList.appendChild(yearGroup);
-      });
-    })
-    .catch(error => {
-      console.error('Error loading publications data:', error);
-      publicationsList.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
-    });
+  return li;
 }
 
 function getVenueShortName(venueStr, year) {
@@ -407,6 +465,9 @@ function getVenueFullName(venueStr, year) {
   if (s.includes('ESEC') || s.includes('FSE')) return `ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE${yearSuffix})`;
   if (s.includes('KDD')) return `ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD${yearSuffix})`;
   if (s.includes('COLM')) return `Conference on Language Modeling (COLM${yearSuffix})`;
+  if (s.includes('CAV')) return `International Conference on Computer Aided Verification (CAV${yearSuffix})`;
+  if (s.includes('OSDI')) return `USENIX Symposium on Operating Systems Design and Implementation (OSDI${yearSuffix})`;
+  if (s.includes('OOPSLA')) return `ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA${yearSuffix})`;
 
   if (s.toLowerCase().includes('arxiv')) return 'arXiv preprint';
   if (s.toLowerCase().includes('submission')) return 'In submission';
@@ -425,7 +486,7 @@ function getCCFRank(fullName, originalVenue) {
     v.includes('infocom') || v.includes('jsac') ||
     v.includes('iclr') || v.includes('icml') ||
     v.includes('icse') || v.includes('fse') || v.includes('esec') ||
-    v.includes('kdd')) {
+    v.includes('kdd') || v.includes('cav') || v.includes('osdi') || v.includes('oopsla')) {
     return 'A';
   }
 

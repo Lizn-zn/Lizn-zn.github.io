@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026",
+    "content": "One paper (Goedel-Code-Prover, hierarchical proof search for code verification) accepted at <b>COLM 2026</b>.",
+    "links": []
+  },
+  {
+    "date": "2026",
+    "content": "One paper (QUARRY, difficulty-aware decomposition for automating Rocq proofs) accepted at <b>OOPSLA 2026</b>.",
+    "links": []
+  },
+  {
+    "date": "2026",
+    "content": "One paper (about conformal prediction) accepted at <b>KDD 2026</b>.",
+    "links": []
+  },
+  {
+    "date": "2026",
+    "content": "One paper (about neuro-symbolic proof generation for systems software verification) accepted at <b>OSDI 2026</b>.",
+    "links": []
+  },
+  {
+    "date": "2026",
+    "content": "One paper (AlgoVeri, a benchmark for verified code generation) accepted at <b>ICML 2026</b>.",
+    "links": []
+  },
+  {
     "date": "2025",
     "content": "My Ph.D. thesis received the <b>CCF Outstanding Doctoral Dissertation Award</b>.",
     "links": []
@@ -22,6 +47,11 @@
   {
     "date": "2025",
     "content": "One paper accepted at <b>ICLR 2025</b>.",
+    "links": []
+  },
+  {
+    "date": "2025",
+    "content": "One paper (PyEuclid, a formal plane geometry system) accepted at <b>CAV 2025</b>.",
     "links": []
   },
   {

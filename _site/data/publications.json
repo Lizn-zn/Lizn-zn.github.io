@@ -1,33 +1,114 @@
 [
   {
+    "title": "Goedel-Code-Prover: Hierarchical Proof Search for Open State-of-the-Art Code Verification",
+    "authors": "<b>Zenan Li*</b>, Ziran Yang*, Deyuan He, Haoyu Zhao, Andrew Zhao, Shange Tang, Kaiyu Yang, Aarti Gupta, <br>Zhendong Su, and Chi Jin",
+    "venue": "COLM 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2603.19329"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/goedelcodeprover/Goedel-Code-Prover"
+      }
+    ],
+    "category": "theorem-proving"
+  },
+  {
+    "title": "Planning to Hammer: Difficulty-Aware Decomposition for Automating Rocq Proofs",
+    "authors": "Ning Zhang, Nongyu Di, <b>Zenan Li†</b>, Yuan Yao, and Xiaoxing Ma",
+    "venue": "OOPSLA 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2606.17981"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/ningZhang-cs/QUARRY"
+      }
+    ],
+    "category": "theorem-proving"
+  },
+  {
+    "title": "Conformal Correction for Efficiency May be at Odds with Entropy",
+    "authors": "Senrong Xu, Tianyu Wang, <b>Zenan Li</b>, Yuan Yao, Taolue Chen, Feng Xu, and Xiaoxing Ma",
+    "venue": "KDD 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2512.02704"
+      }
+    ],
+    "category": "trustworthy-ml"
+  },
+  {
+    "title": "AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms",
+    "authors": "Haoyu Zhao, Ziran Yang, Jiawei Li, Deyuan He, <b>Zenan Li</b>, Chi Jin, Venugopal V. Veeravalli, Aarti Gupta, and Sanjeev Arora",
+    "venue": "ICML 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2602.09464"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/haoyuzhao123/algoveri"
+      }
+    ],
+    "category": "theorem-proving"
+  },
+  {
     "title": "Fair Conformal Classification via Learning Representation-Based Groups",
     "authors": "Senrong Xu, Yanke Zhou, Yuhao Tan, <b>Zenan Li</b>, Yuan Yao, Taolue Chen, Feng Xu, and Xiaoxing Ma",
     "venue": "ICLR 2026",
     "year": "2026",
     "highlight": "",
     "thumbnail": "",
-    "tags": []
+    "tags": [],
+    "category": "trustworthy-ml"
   },
   {
     "title": "FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory",
-    "authors": "Xiao-Wen Yang*, Zihao Zhang*, Jianuo Cao, Zhi Zhou, <b>Zenan Li†</b>, Lan-Zhe Guo, Yuan Yao, Taolue Chen, Yu-Feng Li, and Xiaoxing Ma",
+    "authors": "Xiao-Wen Yang*, Zihao Zhang*, Jianuo Cao, Zhi Zhou, <b>Zenan Li†</b>, Lan-Zhe Guo, Yuan Yao, Taolue Chen, <br>Yu-Feng Li, and Xiaoxing Ma",
     "venue": "ICLR 2026",
     "year": "2026",
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2510.02335" },
-      { "text": "Code", "link": "https://github.com/njuyxw/FormalML" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2510.02335"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/njuyxw/FormalML"
+      }
+    ],
+    "category": "theorem-proving"
   },
   {
     "title": "Neuro-Symbolic Proof Generation for Scaling Systems Software Verification",
     "authors": "Baoding He*, <b>Zenan Li*</b>, Wei Sun, Yuan Yao, Taolue Chen, Xiaoxing Ma, and Zhendong Su",
-    "venue": "In submission",
-    "year": "",
+    "venue": "OSDI 2026",
+    "year": "2026",
     "highlight": "",
     "thumbnail": "",
-    "tags": []
+    "tags": [],
+    "category": "theorem-proving"
   },
   {
     "title": "Reviving DSP for Advanced Theorem Proving in the Era of Reasoning Models",
@@ -37,9 +118,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2506.11487" },
-      { "text": "Code", "link": "https://github.com/microsoft/DSP-Plus" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2506.11487"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/microsoft/DSP-Plus"
+      }
+    ],
+    "category": "theorem-proving"
   },
   {
     "title": "A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning",
@@ -49,9 +137,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2502.00511" },
-      { "text": "Code", "link": "https://github.com/WNJXYK/RPC/" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2502.00511"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/WNJXYK/RPC/"
+      }
+    ],
+    "category": "neuro-symbolic"
   },
   {
     "title": "Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning",
@@ -61,9 +156,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2502.13834" },
-      { "text": "Code", "link": "https://arxiv.org/abs/2502.13834" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2502.13834"
+      },
+      {
+        "text": "Code",
+        "link": "https://arxiv.org/abs/2502.13834"
+      }
+    ],
+    "category": "theorem-proving"
   },
   {
     "title": "Decoupling Training-Free Guided Diffusion by ADMM",
@@ -73,9 +175,35 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2411.12773" },
-      { "text": "Code", "link": "https://github.com/youyuan-zhang/ADMMDiff" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2411.12773"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/youyuan-zhang/ADMMDiff"
+      }
+    ],
+    "category": "neuro-symbolic"
+  },
+  {
+    "title": "PyEuclid: A Versatile Formal Plane Geometry System in Python",
+    "authors": "Zhaoyu Li, Hangrui Bi, Jialiang Sun, <b>Zenan Li</b>, Kaiyu Yang, and Xujie Si",
+    "venue": "CAV 2025",
+    "year": "2025",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://link.springer.com/chapter/10.1007/978-3-031-98685-7_20"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/zhaoyu-li/PyEuclid"
+      }
+    ],
+    "category": "theorem-proving"
   },
   {
     "title": "Autoformalize Mathematical Statements by Symbolic Equivalence and Semantic Consistency",
@@ -85,9 +213,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2410.20936" },
-      { "text": "Code", "link": "https://github.com/Miracle-Messi/Isa-AutoFormal" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2410.20936"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/Miracle-Messi/Isa-AutoFormal"
+      }
+    ],
+    "category": "theorem-proving"
   },
   {
     "title": "Neuro-Symbolic Data Generation for Math Reasoning",
@@ -97,8 +232,12 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2412.04857" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2412.04857"
+      }
+    ],
+    "category": "neuro-symbolic"
   },
   {
     "title": "A Survey on Deep Learning for Theorem Proving",
@@ -108,9 +247,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2404.09939" },
-      { "text": "Code", "link": "https://github.com/zhaoyu-li/DL4TP" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2404.09939"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/zhaoyu-li/DL4TP"
+      }
+    ],
+    "category": "theorem-proving"
   },
   {
     "title": "Neuro-symbolic Learning Yielding Logical Constraints",
@@ -120,9 +266,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2410.20957" },
-      { "text": "Code", "link": "https://github.com/Lizn-zn/Nesy-Programming" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2410.20957"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/Lizn-zn/Nesy-Programming"
+      }
+    ],
+    "category": "neuro-symbolic"
   },
   {
     "title": "Learning with Logical Constraints but without Shortcut Satisfaction",
@@ -132,9 +285,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2403.00329" },
-      { "text": "Code", "link": "https://github.com/SoftWiser-group/NeSy-without-Shortcuts" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2403.00329"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/SoftWiser-group/NeSy-without-Shortcuts"
+      }
+    ],
+    "category": "neuro-symbolic"
   },
   {
     "title": "Softened Symbol Grounding for Neuro-symbolic Systems",
@@ -144,9 +304,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/2403.00323" },
-      { "text": "Code", "link": "https://github.com/SoftWiser-group/Soften-NeSy-learning" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2403.00323"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/SoftWiser-group/Soften-NeSy-learning"
+      }
+    ],
+    "category": "neuro-symbolic"
   },
   {
     "title": "Lightweight Approaches to DNN Regression Error Reduction: An Uncertainty Alignment Perspective",
@@ -156,9 +323,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://ieeexplore.ieee.org/document/10172764" },
-      { "text": "Code", "link": "https://github.com/Lizn-zn/Uncertainty-Alignment" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://ieeexplore.ieee.org/document/10172764"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/Lizn-zn/Uncertainty-Alignment"
+      }
+    ],
+    "category": "trustworthy-ml"
   },
   {
     "title": "Fair Representation Learning: An Alternative to Mutual Information",
@@ -168,9 +342,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://dl.acm.org/doi/10.1145/3534678.3539302" },
-      { "text": "Code", "link": "https://github.com/SoftWiser-group/FairDisCo" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://dl.acm.org/doi/10.1145/3534678.3539302"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/SoftWiser-group/FairDisCo"
+      }
+    ],
+    "category": "trustworthy-ml"
   },
   {
     "title": "Operational Calibration: Debugging Confidence Errors for DNNs in the Field",
@@ -180,9 +361,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/1910.02352" },
-      { "text": "Code", "link": "https://github.com/Lizn-zn/Op-QA" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/1910.02352"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/Lizn-zn/Op-QA"
+      }
+    ],
+    "category": "trustworthy-ml"
   },
   {
     "title": "Boosting Operational DNN Testing Efficiency Through Conditioning",
@@ -192,9 +380,16 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://arxiv.org/abs/1906.02533" },
-      { "text": "Code", "link": "https://github.com/Lizn-zn/DNNOpAcc" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/1906.02533"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/Lizn-zn/DNNOpAcc"
+      }
+    ],
+    "category": "trustworthy-ml"
   },
   {
     "title": "Structural Coverage Criteria for Neural Networks Could Be Misleading",
@@ -204,7 +399,11 @@
     "highlight": "",
     "thumbnail": "",
     "tags": [
-      { "text": "Paper", "link": "https://dl.acm.org/doi/10.1109/ICSE-NIER.2019.00031" }
-    ]
+      {
+        "text": "Paper",
+        "link": "https://dl.acm.org/doi/10.1109/ICSE-NIER.2019.00031"
+      }
+    ],
+    "category": "trustworthy-ml"
   }
 ]
