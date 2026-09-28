@@ -2,66 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Publications - Zenan Li</title>
-
-  <link rel="stylesheet" href="../styles.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: '#fefffe',
-            foreground: '#0f172a',
-            primary: '#1e293b',
-            accent: '#d4a562',
-            'accent-dark': '#b88a4d',
-            muted: '#64748b',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['Crimson Text', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publications — Zenan Li.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Publications · Zenan Li</title>
+  <link rel="canonical" href="https://lizn-zn.github.io/pages/all-publications.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zenan Li">
+  <meta property="og:title" content="Publications · Zenan Li">
+  <meta property="og:description" content="Publications — Zenan Li.">
+  <meta property="og:url" content="https://lizn-zn.github.io/pages/all-publications.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../assets/favicon.ico?v=zl-1" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=zl-1">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=zl-1">
+  <link rel="stylesheet" href="../styles.css?v=manuscript-5">
+  <script src="../script.js?v=manuscript-5" defer></script>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased">
-
-  <nav class="glass fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-5xl mx-auto px-6 py-3 flex items-center space-x-4 text-sm">
-      <a href="../index.html" class="nav-item">Home</a>
-      <span class="text-slate-300">/</span>
-      <span class="text-primary font-medium">All Publications</span>
-    </div>
-  </nav>
-
-  <main class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav-shell wrap" aria-label="Main navigation"><a class="wordmark" href="../index.html">Zenan Li</a><a class="text-link" href="../index.html">← Back to homepage</a></nav></header>
+  <main id="main" class="archive-main wrap">
     <section id="all-publications">
-      <div class="section-header mb-6">
-        <h2 class="font-serif text-3xl font-bold text-primary">All Publications</h2>
-      </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-        <div class="publications-list"></div>
-      </div>
-      <div class="mt-6 text-center">
-        <a href="../index.html" class="text-sm text-muted hover:text-accent transition-colors">← Back to Homepage</a>
-      </div>
+      <div class="archive-heading"><h1>Publications</h1><p>Research in formal reasoning, neuro-symbolic AI, and trustworthy learning.</p></div>
+      <p class="contribution-note">* Equal contribution · † Project leader</p>        <div class="publication-controls">
+          <div class="pub-filters" role="group" aria-label="Filter publications by research area">
+            <button type="button" class="filter-btn active" data-category="all" aria-pressed="true">All topics</button><button type="button" class="filter-btn" data-category="theorem-proving" aria-pressed="false">Formal reasoning</button><button type="button" class="filter-btn" data-category="neuro-symbolic" aria-pressed="false">Neuro-symbolic AI</button><button type="button" class="filter-btn" data-category="trustworthy-ml" aria-pressed="false">Trustworthy ML</button>
+          </div>
+          <div class="pub-toolbar"><label class="search-field"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="publication-search" placeholder="Search publications…" aria-label="Search publications"></label><div class="pub-view-toggle" role="group" aria-label="Group publications"><button type="button" class="pub-toggle-btn" data-mode="year" aria-pressed="false">By year</button><button type="button" class="pub-toggle-btn active" data-mode="topic" aria-pressed="true">By topic</button></div></div>
+        </div>
+<p class="pub-result-count" role="status"></p><div class="publications-list"><p class="loading">Loading publications…</p></div>
+      <a class="text-link archive-back" href="../index.html#publications">← Back to homepage</a>
     </section>
   </main>
-
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="max-w-5xl mx-auto px-6 py-6 text-center">
-      <p class="text-sm text-muted">&copy; <span id="current-year">2026</span> Zenan Li. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="../script.js"></script>
-  <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-  </script>
+  <footer class="site-footer wrap"><p>© <span id="current-year">2026</span> Zenan Li</p><a href="mailto:zenan.li@inf.ethz.ch">Contact</a></footer>
+  <noscript><p class="wrap">Enable JavaScript to load the publications.</p></noscript>
 </body>
 </html>

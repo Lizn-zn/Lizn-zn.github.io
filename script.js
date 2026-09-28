@@ -1,644 +1,336 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Make all links open in a new tab
-  makeAllLinksOpenInNewTab();
-
-  // Set up MutationObserver to watch for dynamically added links
-  setupLinkObserver();
-
-  // Mobile Menu Toggle
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close menu when a link is clicked
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-  }
-
-  // Load publications data from JSON file
-  loadPublications();
-
-  // Smooth scrolling for navigation links
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      if (this.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-          const navHeight = document.querySelector('.top-nav').offsetHeight;
-          const targetPosition = targetSection.offsetTop - navHeight - 20;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          navLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-        }
-      }
-    });
-  });
-
-  // Update active nav link on scroll
-  window.addEventListener('scroll', function() {
-    let current = '';
-    const sections = document.querySelectorAll('section[id]');
-    const navHeight = document.querySelector('.top-nav').offsetHeight;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      if (pageYOffset >= sectionTop - navHeight - 100) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      const linkTarget = link.getAttribute('href').substring(1);
-      if (linkTarget === current ||
-        (current === 'homepage' && linkTarget === 'about') ||
-        (current === 'about' && linkTarget === 'homepage')) {
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // Load news data
-  let newsJsonPath = 'data/news.json';
-  if (window.location.pathname.includes('/pages/')) {
-    newsJsonPath = '../data/news.json';
-  }
-
-  fetch(newsJsonPath)
-    .then(response => response.json())
-    .then(data => {
-      const latestNewsSection = document.getElementById('latest-news');
-      if (latestNewsSection) {
-        renderNewsItems(data.slice(0, 3), 'news-container');
-      }
-
-      const allNewsSection = document.getElementById('all-news');
-      if (allNewsSection) {
-        renderNewsItems(data, 'all-news-container');
-      }
-    })
-    .catch(error => {
-      console.error('Error loading news data:', error);
-    });
-
-  // Load honors data
-  let honorsJsonPath = 'data/honors.json';
-  if (window.location.pathname.includes('/pages/')) {
-    honorsJsonPath = '../data/honors.json';
-  }
-
-  fetch(honorsJsonPath)
-    .then(response => response.json())
-    .then(data => {
-      const honorsSection = document.getElementById('honors');
-      if (honorsSection) {
-        renderHonorsItems(data.slice(0, 8), 'honors-container');
-      }
-
-      const allHonorsSection = document.getElementById('all-honors');
-      if (allHonorsSection) {
-        renderHonorsItems(data, 'all-honors-container');
-      }
-    })
-    .catch(error => {
-      console.error('Error loading honors data:', error);
-    });
-});
-
-// Function to load publications from JSON
-let ALL_PUBLICATIONS = [];
-let PUB_VIEW_MODE = 'topic'; // 'topic' | 'year'
-
-const CATEGORY_ORDER = ['theorem-proving', 'neuro-symbolic', 'trustworthy-ml'];
+const DATA_BASE = new URL('data/', document.currentScript.src);
 const CATEGORY_NAMES = {
-  'theorem-proving': 'Formal Reasoning & Theorem Proving',
-  'neuro-symbolic': 'Neuro-Symbolic & LLM Reasoning',
-  'trustworthy-ml': 'Trustworthy & Uncertainty-Aware ML'
+  'theorem-proving': 'Formal reasoning & theorem proving',
+  'neuro-symbolic': 'Neuro-symbolic AI & LLM reasoning',
+  'trustworthy-ml': 'Trustworthy & uncertainty-aware ML'
+};
+const publicationState = {
+  papers: [], category: 'all', query: '', mode: 'topic'
 };
 
-function pubYearDesc(a, b) {
-  const yearA = a.year ? parseInt(a.year) : 9999;
-  const yearB = b.year ? parseInt(b.year) : 9999;
-  return yearB - yearA;
+function externalLinks(root = document) {
+  root.querySelectorAll('a[href]').forEach(link => {
+    if (/^https?:$/.test(link.protocol) && link.origin !== location.origin) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  });
 }
 
-function loadPublications() {
-  let publicationsJsonPath = 'data/publications.json';
-  if (window.location.pathname.includes('/pages/')) {
-    publicationsJsonPath = '../data/publications.json';
+async function loadData(name, container, render) {
+  if (!container) return;
+  try {
+    const response = await fetch(new URL(`${name}.json`, DATA_BASE), { cache: 'no-cache' });
+    if (!response.ok) throw new Error(`Could not load ${name}`);
+    const items = await response.json();
+    render(items);
+    externalLinks(container);
+  } catch (error) {
+    container.replaceChildren();
+    const message = document.createElement('p');
+    message.className = 'load-error';
+    message.append(`Unable to load ${name}. `);
+    const retry = document.createElement('button');
+    retry.type = 'button';
+    retry.textContent = 'Try again';
+    retry.addEventListener('click', () => loadData(name, container, render));
+    message.append(retry);
+    container.append(message);
   }
-
-  const publicationsList = document.querySelector('.publications-list');
-  if (!publicationsList) {
-    console.warn('Publications list not found');
-    return;
-  }
-
-  publicationsList.innerHTML = '';
-
-  fetch(publicationsJsonPath)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(publications => {
-      console.log('Loaded publications:', publications.length);
-      ALL_PUBLICATIONS = publications;
-      buildPubToggle(publicationsList);
-      renderPublications();
-    })
-    .catch(error => {
-      console.error('Error loading publications data:', error);
-      publicationsList.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
-    });
 }
 
-// Build the "By Topic / By Year" toggle above the publications list
-function buildPubToggle(publicationsList) {
-  if (document.querySelector('.pub-view-toggle')) return;
-  const toggle = document.createElement('div');
-  toggle.className = 'pub-view-toggle';
-
-  const makeBtn = (mode, label) => {
-    const btn = document.createElement('button');
-    btn.className = 'pub-toggle-btn' + (PUB_VIEW_MODE === mode ? ' active' : '');
-    btn.textContent = label;
-    btn.dataset.mode = mode;
-    btn.onclick = () => {
-      if (PUB_VIEW_MODE === mode) return;
-      PUB_VIEW_MODE = mode;
-      document.querySelectorAll('.pub-toggle-btn').forEach(b =>
-        b.classList.toggle('active', b.dataset.mode === mode));
-      renderPublications();
-    };
-    return btn;
+function setupNavigation() {
+  const button = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('#nav-links');
+  if (!button || !menu) return;
+  const closeMenu = () => {
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Open navigation');
+    menu.classList.remove('is-open');
   };
-
-  toggle.appendChild(makeBtn('topic', 'By Topic'));
-  toggle.appendChild(makeBtn('year', 'By Year'));
-  publicationsList.parentNode.insertBefore(toggle, publicationsList);
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    menu.classList.toggle('is-open', open);
+  });
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      button.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.site-header')) closeMenu();
+  });
+  const wideScreen = window.matchMedia('(min-width: 681px)');
+  wideScreen.addEventListener('change', closeMenu);
+  const links = Array.from(menu.querySelectorAll('a[href^="#"]'));
+  const sections = links.map(link => document.querySelector(link.getAttribute('href')));
+  let ticking = false;
+  const update = () => {
+    let active = 0;
+    sections.forEach((section, i) => {
+      if (section && section.getBoundingClientRect().top <= 160) active = i;
+    });
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 3) active = links.length - 1;
+    links.forEach((link, i) => {
+      link.classList.toggle('active', i === active);
+      if (i === active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
 }
 
-// Render one group (a header + list of publications)
-function renderPubGroup(publicationsList, headerText, pubs, headerClass) {
-  const group = document.createElement('div');
-  group.className = 'pub-year-group';
+function renderNews(items, container, limit) {
+  container.replaceChildren();
+  items.slice(0, limit).forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'news-item';
+    const date = document.createElement('span');
+    date.className = 'news-date';
+    date.textContent = item.date;
+    const content = document.createElement('div');
+    content.className = 'news-content';
+    // Editorial HTML comes from the repository's own data files.
+    content.innerHTML = item.content;
+    const links = item.links?.length ? item.links : item.link && item.link !== '#' ? [{ url: item.link, text: 'Read more ↗' }] : [];
+    links.forEach(itemLink => {
+      const link = document.createElement('a');
+      link.href = itemLink.url;
+      link.textContent = itemLink.text;
+      content.append(' ', link);
+    });
+    row.append(date, content);
+    container.append(row);
+  });
+}
 
-  const header = document.createElement('h3');
-  header.className = headerClass || 'pub-year-header';
-  header.textContent = headerText;
-  group.appendChild(header);
+function renderHonors(items, container) {
+  container.replaceChildren();
+  items.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'honor-item';
+    const year = document.createElement('span');
+    year.className = 'honor-year';
+    year.textContent = item.date;
+    const content = document.createElement('div');
+    content.className = 'honor-content';
+    const title = document.createElement(container.id === 'all-honors-container' ? 'h2' : 'h3');
+    title.textContent = item.title;
+    const org = document.createElement('p');
+    org.textContent = item.org;
+    content.append(title, org);
+    row.append(year, content);
+    container.append(row);
+  });
+}
 
-  const ul = document.createElement('ul');
-  ul.className = 'pub-list-ul';
-  pubs.forEach(pub => ul.appendChild(renderPubItem(pub)));
-  group.appendChild(ul);
+function paperLinks(paper) {
+  return (paper.tags || []).filter(tag => /^https?:\/\//i.test((tag.link || '').trim()));
+}
 
-  publicationsList.appendChild(group);
+// Conference names follow the bibliography in the original homepage.
+function formatVenue(paper) {
+  if (!paper.venue) return paper.year ? `Preprint, ${paper.year}` : 'Preprint';
+  const abbreviation = paper.venue.replace(/\s*\d{4}/g, '').trim();
+  const names = {
+    COLM: 'Conference on Language Modeling',
+    OOPSLA: 'ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications',
+    ICML: 'International Conference on Machine Learning',
+    ICLR: 'International Conference on Learning Representations',
+    NeurIPS: 'Advances in Neural Information Processing Systems',
+    OSDI: 'USENIX Symposium on Operating Systems Design and Implementation',
+    CAV: 'International Conference on Computer Aided Verification',
+    CVPR: 'IEEE/CVF Conference on Computer Vision and Pattern Recognition',
+    KDD: 'ACM SIGKDD Conference on Knowledge Discovery and Data Mining',
+    ICSE: 'International Conference on Software Engineering',
+    'ICSE-NIER': 'International Conference on Software Engineering, New Ideas and Emerging Results',
+    'ESEC/FSE': 'ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering'
+  };
+  return names[abbreviation] ? `${names[abbreviation]} (${paper.venue})` : paper.venue;
+}
+
+function renderPaper(paper, citationNumber) {
+  const row = document.createElement('li');
+  row.className = 'pub-list-item';
+  const citation = document.createElement('span');
+  citation.className = 'pub-citation';
+  citation.setAttribute('aria-hidden', 'true');
+  citation.textContent = `[${String(citationNumber).padStart(2, '0')}]`;
+  row.append(citation);
+  const meta = document.createElement('div');
+  meta.className = 'pub-meta';
+  const venue = document.createElement('span');
+  venue.className = 'pub-venue-tag';
+  venue.textContent = formatVenue(paper);
+  meta.append(venue);
+  if (paper.highlight) {
+    const highlight = document.createElement('span');
+    highlight.className = 'pub-badge-highlight';
+    highlight.textContent = paper.highlight;
+    meta.append(highlight);
+  }
+  const title = document.createElement(document.getElementById('all-publications') ? 'h3' : 'h4');
+  title.className = 'pub-title';
+  const links = paperLinks(paper);
+  const paperLink = links.find(tag => tag.text === 'Paper');
+  if (paperLink) {
+    const anchor = document.createElement('a');
+    anchor.href = paperLink.link;
+    anchor.textContent = paper.title;
+    title.append(anchor);
+  } else title.textContent = paper.title;
+  const authors = document.createElement('p');
+  authors.className = 'pub-authors';
+  authors.innerHTML = (paper.authors || '').replace(/<br\s*\/?\s*>/gi, ' ');
+  row.append(title, authors, meta);
+  const resources = document.createElement('div');
+  resources.className = 'pub-links';
+  links.forEach(tag => {
+    const anchor = document.createElement('a');
+    anchor.className = 'pub-link-btn';
+    anchor.href = tag.link;
+    anchor.textContent = `[${tag.text}]`;
+    anchor.setAttribute('aria-label', `${tag.text}: ${paper.title}`);
+    resources.append(anchor);
+  });
+  if (paper.thumbnail) {
+    const preview = document.createElement('button');
+    preview.type = 'button';
+    preview.className = 'pub-link-btn';
+    preview.textContent = 'Preview +';
+    preview.setAttribute('aria-expanded', 'false');
+    const img = document.createElement('img');
+    img.className = 'pub-thumbnail';
+    img.src = new URL(paper.thumbnail, new URL('../', DATA_BASE)).href;
+    img.alt = `Research figure for ${paper.title}`;
+    img.loading = 'lazy';
+    img.hidden = true;
+    preview.addEventListener('click', () => {
+      img.hidden = !img.hidden;
+      preview.setAttribute('aria-expanded', String(!img.hidden));
+      preview.textContent = img.hidden ? 'Preview +' : 'Hide preview −';
+    });
+    resources.append(preview);
+    row.append(resources, img);
+  } else if (links.length) row.append(resources);
+  return row;
 }
 
 function renderPublications() {
-  const publicationsList = document.querySelector('.publications-list');
-  if (!publicationsList) return;
-  publicationsList.innerHTML = '';
-
-  if (PUB_VIEW_MODE === 'topic') {
-    // Group by category, most recent first within each
-    const byCat = {};
-    ALL_PUBLICATIONS.forEach(pub => {
-      const c = pub.category || 'other';
-      (byCat[c] = byCat[c] || []).push(pub);
+  const list = document.querySelector('.publications-list');
+  if (!list) return;
+  const { papers, category, query, mode } = publicationState;
+  const normalizedQuery = query.trim().normalize('NFKC').toLowerCase();
+  const filtered = papers.filter(paper => {
+    const text = `${paper.title} ${paper.authors} ${paper.venue} ${paper.year} ${CATEGORY_NAMES[paper.category] || ''}`.replace(/<[^>]*>/g, '').normalize('NFKC').toLowerCase();
+    return (category === 'all' || paper.category === category) && (!normalizedQuery || text.includes(normalizedQuery));
+  }).sort((a, b) => (Number(b.year) || 9999) - (Number(a.year) || 9999));
+  const isFiltered = category !== 'all' || Boolean(normalizedQuery);
+  const shown = filtered;
+  list.replaceChildren();
+  const count = document.querySelector('.pub-result-count');
+  count.textContent = isFiltered ? `${filtered.length} matching publication${filtered.length === 1 ? '' : 's'}` : `${papers.length} publications`;
+  if (!shown.length) {
+    const empty = document.createElement('p');
+    empty.className = 'empty-state';
+    empty.append('No publications match your search. ');
+    const reset = document.createElement('button');
+    reset.type = 'button';
+    reset.textContent = 'Clear filters';
+    reset.addEventListener('click', () => {
+      publicationState.query = '';
+      document.querySelector('#publication-search').value = '';
+      setCategory('all');
     });
-    const cats = CATEGORY_ORDER.filter(c => byCat[c]);
-    Object.keys(byCat).forEach(c => { if (!cats.includes(c)) cats.push(c); });
-    cats.forEach(cat => {
-      const pubs = byCat[cat].slice().sort(pubYearDesc);
-      renderPubGroup(publicationsList, CATEGORY_NAMES[cat] || cat, pubs, 'pub-year-header pub-topic-header');
-    });
-  } else {
-    // Group by year descending (Preprints/Missing year at top)
-    const sorted = ALL_PUBLICATIONS.slice().sort(pubYearDesc);
-    const byYear = {};
-    sorted.forEach(pub => {
-      const year = pub.year || 'Preprint';
-      (byYear[year] = byYear[year] || []).push(pub);
-    });
-    const years = Object.keys(byYear).sort((a, b) => {
-      if (a === 'Preprint') return -1;
-      if (b === 'Preprint') return 1;
-      return b - a;
-    });
-    years.forEach(year => {
-      renderPubGroup(publicationsList, `-${year}-`, byYear[year], 'pub-year-header');
-    });
+    empty.append(reset);
+    list.append(empty);
   }
+  const groups = new Map();
+  shown.forEach(paper => {
+    const key = mode === 'topic' ? paper.category || 'other' : paper.year || 'Preprint';
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(paper);
+  });
+  const keys = mode === 'topic' ? [...new Set([...Object.keys(CATEGORY_NAMES), ...groups.keys()])].filter(key => groups.has(key)) : [...groups.keys()];
+  let citationNumber = 0;
+  keys.forEach(key => {
+    const group = document.createElement('div');
+    group.className = 'pub-year-group';
+    const heading = document.createElement(document.getElementById('all-publications') ? 'h2' : 'h3');
+    heading.className = 'pub-year-header';
+    heading.textContent = mode === 'topic' ? CATEGORY_NAMES[key] || 'Other research' : key;
+    const ul = document.createElement('ol');
+    ul.className = 'pub-list-ul';
+    ul.start = citationNumber + 1;
+    groups.get(key).forEach(paper => ul.append(renderPaper(paper, ++citationNumber)));
+    group.append(heading, ul);
+    list.append(group);
+  });
+  externalLinks(list);
 }
 
-// Build a single publication <li> element
-function renderPubItem(pub) {
-          const li = document.createElement('li');
-          li.className = 'pub-list-item';
-
-          const contentWrapper = document.createElement('div');
-          contentWrapper.className = 'pub-content-wrapper';
-
-          // --- Line 1: [Venue] Title ---
-          const line1 = document.createElement('div');
-          line1.className = 'pub-line-1';
-
-          const titleSpan = document.createElement('span');
-          titleSpan.className = 'pub-title-text';
-          titleSpan.textContent = pub.title;
-          line1.appendChild(titleSpan);
-
-          // Paper/Code Buttons
-          if (pub.tags) {
-            pub.tags.forEach(tag => {
-              const link = (tag.link || '').trim();
-              const isHttp = /^https?:\/\//i.test(link);
-              if (link && link !== '#' && isHttp) {
-                const btn = document.createElement('a');
-                btn.className = 'pub-link-btn';
-                btn.href = link;
-                btn.target = '_blank';
-
-                if (tag.text === 'Paper') {
-                  btn.textContent = 'PDF';
-                } else {
-                  btn.textContent = tag.text;
-                }
-
-                line1.appendChild(btn);
-              }
-            });
-          }
-
-          // Thumbnail Preview Button
-          let thumbBox = null;
-          if (pub.thumbnail) {
-            const btnPreview = document.createElement('button');
-            btnPreview.className = 'pub-link-btn pub-btn-preview';
-            btnPreview.textContent = 'Image';
-            btnPreview.onclick = function() {
-              if (li.classList.contains('with-thumbnail-expanded')) {
-                li.classList.remove('with-thumbnail-expanded');
-                thumbBox.style.display = 'none';
-                btnPreview.classList.remove('active');
-              } else {
-                li.classList.add('with-thumbnail-expanded');
-                thumbBox.style.display = 'block';
-                btnPreview.classList.add('active');
-              }
-            };
-            line1.appendChild(btnPreview);
-
-            thumbBox = document.createElement('div');
-            thumbBox.className = 'pub-thumbnail-box';
-            thumbBox.style.display = 'none';
-            const thumbImg = document.createElement('img');
-            thumbImg.src = pub.thumbnail;
-            thumbImg.alt = 'Publication Thumbnail';
-            thumbBox.appendChild(thumbImg);
-          }
-
-          contentWrapper.appendChild(line1);
-
-          // --- Line 2: Authors ---
-          const line2 = document.createElement('div');
-          line2.className = 'pub-line-2';
-          line2.innerHTML = pub.authors;
-          contentWrapper.appendChild(line2);
-
-          // --- Line 3: Venue Details ---
-          const line3 = document.createElement('div');
-          line3.className = 'pub-line-3';
-
-          // Badge (Oral/Spotlight)
-          let highlightText = pub.highlight || '';
-          let badgeText = '';
-          if (highlightText.toLowerCase().includes('oral')) badgeText = 'Oral';
-          else if (highlightText.toLowerCase().includes('spotlight')) badgeText = 'Spotlight';
-
-          if (badgeText) {
-            const badge = document.createElement('span');
-            badge.className = 'pub-badge-highlight';
-            badge.textContent = badgeText;
-            line3.appendChild(badge);
-          }
-
-          // Full Venue Name
-          const fullVenueName = getVenueFullName(pub.venue, pub.year);
-          const venueNameSpan = document.createElement('span');
-          venueNameSpan.textContent = fullVenueName;
-          line3.appendChild(venueNameSpan);
-
-          contentWrapper.appendChild(line3);
-
-          li.appendChild(contentWrapper);
-          if (thumbBox) {
-            li.appendChild(thumbBox);
-          }
-
-  return li;
+function setCategory(category) {
+  publicationState.category = category;
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    const selected = button.dataset.category === category;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  renderPublications();
 }
 
-function getVenueShortName(venueStr, year) {
-  if (!venueStr) return 'Preprint';
-
-  let s = venueStr.replace(/\d{4}/g, '').trim();
-  let suffix = '';
-
-  // Conferences that need year suffix
-  const conferences = [
-    'NeurIPS', 'CVPR', 'ICCV', 'ECCV', 'ICRA', 'AAAI',
-    'GLOBECOM', 'INFOCOM', 'MOBICOM',
-    'ICLR', 'ICML', 'ICSE', 'KDD', 'COLM', 'OSDI'
-  ];
-  for (const conf of conferences) {
-    if (s.toUpperCase().includes(conf.toUpperCase())) {
-      if (year) {
-        const yearStr = year.toString();
-        if (yearStr.length === 4) {
-          suffix = "'" + yearStr.substring(2);
-        }
-      }
-      return conf + suffix;
-    }
-  }
-
-  // ESEC/FSE special case
-  if (s.includes('ESEC') || s.includes('FSE')) {
-    if (year) {
-      const yearStr = year.toString();
-      if (yearStr.length === 4) {
-        suffix = "'" + yearStr.substring(2);
-      }
-    }
-    return 'ESEC/FSE' + suffix;
-  }
-
-  // ICSE-NIER
-  if (s.includes('ICSE-NIER')) {
-    if (year) {
-      const yearStr = year.toString();
-      if (yearStr.length === 4) {
-        suffix = "'" + yearStr.substring(2);
-      }
-    }
-    return 'ICSE-NIER' + suffix;
-  }
-
-  // Special cases
-  if (s.toLowerCase().includes('arxiv')) return 'ArXiv';
-  if (s.toLowerCase().includes('submission')) return 'In Submission';
-
-  // Journals
-  if (s.includes('TDSC')) return 'IEEE TDSC';
-  if (s.includes('TMC')) return 'IEEE TMC';
-  if (s.includes('JSAC')) return 'IEEE JSAC';
-  if (s.includes('TGCN')) return 'IEEE TGCN';
-  if (s.includes('LNET')) return 'IEEE LNET';
-  if (s.includes('TNSE')) return 'IEEE TNSE';
-  if (s.includes('IOTJ') || s.includes('IoTJ')) return 'IEEE IoTJ';
-
-  return s;
-}
-
-function getVenueFullName(venueStr, year) {
-  if (!venueStr) return '';
-  let s = venueStr.replace(/\d{4}/g, '').trim();
-
-  let yearSuffix = '';
-  if (year) {
-    const yearStr = year.toString();
-    if (yearStr.length === 4) {
-      yearSuffix = "'" + yearStr.substring(2);
-    }
-  }
-
-  // Journal Full Names (No Year)
-  if (s.includes('TDSC')) return 'IEEE Transactions on Dependable and Secure Computing';
-  if (s.includes('TMC')) return 'IEEE Transactions on Mobile Computing';
-  if (s.includes('JSAC')) return 'IEEE Journal on Selected Areas in Communications';
-  if (s.includes('TGCN')) return 'IEEE Transactions on Green Communications and Networking';
-  if (s.includes('TNSE')) return 'IEEE Transactions on Network Science and Engineering';
-  if (s.includes('IoTJ') || s.includes('IOTJ')) return 'IEEE Internet of Things Journal';
-  if (s.includes('LNET') || s.includes('LNet')) return 'IEEE Networking Letters';
-
-  // Conference Full Names (With Year Suffix)
-  if (s.includes('NeurIPS')) return `Advances in Neural Information Processing Systems (NeurIPS${yearSuffix})`;
-  if (s.includes('CVPR')) return `IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR${yearSuffix})`;
-  if (s.includes('ICCV')) return `IEEE/CVF International Conference on Computer Vision (ICCV${yearSuffix})`;
-  if (s.includes('ECCV')) return `European Conference on Computer Vision (ECCV${yearSuffix})`;
-  if (s.includes('ICRA')) return `IEEE International Conference on Robotics and Automation (ICRA${yearSuffix})`;
-  if (s.includes('AAAI')) return `AAAI Conference on Artificial Intelligence (AAAI${yearSuffix})`;
-  if (s.includes('GLOBECOM')) return `IEEE Global Communications Conference (GLOBECOM${yearSuffix})`;
-  if (s.includes('INFOCOM')) return `IEEE International Conference on Computer Communications (INFOCOM${yearSuffix})`;
-  if (s.includes('MOBICOM')) return `Annual International Conference on Mobile Computing and Networking (MobiCom${yearSuffix})`;
-
-  // Additional conferences for Zenan's publications
-  if (s.includes('ICLR')) return `International Conference on Learning Representations (ICLR${yearSuffix})`;
-  if (s.includes('ICML')) return `International Conference on Machine Learning (ICML${yearSuffix})`;
-  if (s.includes('ICSE-NIER')) return `International Conference on Software Engineering, New Ideas and Emerging Results (ICSE-NIER${yearSuffix})`;
-  if (s.includes('ICSE')) return `International Conference on Software Engineering (ICSE${yearSuffix})`;
-  if (s.includes('ESEC') || s.includes('FSE')) return `ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE${yearSuffix})`;
-  if (s.includes('KDD')) return `ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD${yearSuffix})`;
-  if (s.includes('COLM')) return `Conference on Language Modeling (COLM${yearSuffix})`;
-  if (s.includes('CAV')) return `International Conference on Computer Aided Verification (CAV${yearSuffix})`;
-  if (s.includes('OSDI')) return `USENIX Symposium on Operating Systems Design and Implementation (OSDI${yearSuffix})`;
-  if (s.includes('OOPSLA')) return `ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA${yearSuffix})`;
-
-  if (s.toLowerCase().includes('arxiv')) return 'arXiv preprint';
-  if (s.toLowerCase().includes('submission')) return 'In submission';
-
-  return s;
-}
-
-function getCCFRank(fullName, originalVenue) {
-  const v = (fullName + ' ' + originalVenue).toLowerCase();
-
-  // CCF-A
-  if (v.includes('tdsc') || v.includes('dependable and secure') ||
-    v.includes('tmc') || v.includes('mobile computing') ||
-    v.includes('aaai') || v.includes('neurips') ||
-    v.includes('cvpr') || v.includes('iccv') ||
-    v.includes('infocom') || v.includes('jsac') ||
-    v.includes('iclr') || v.includes('icml') ||
-    v.includes('icse') || v.includes('fse') || v.includes('esec') ||
-    v.includes('kdd') || v.includes('cav') || v.includes('osdi') || v.includes('oopsla')) {
-    return 'A';
-  }
-
-  // CCF-B
-  if (v.includes('icra') || v.includes('colm')) {
-    return 'B';
-  }
-
-  // CCF-C
-  if (v.includes('globecom')) {
-    return 'C';
-  }
-
-  return null;
-}
-
-// Function to render news items
-function renderNewsItems(newsData, containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) {
-    console.warn('News container not found:', containerId);
-    return;
-  }
-
-  container.innerHTML = '';
-
-  newsData.forEach(newsItem => {
-    const newsElement = document.createElement('div');
-    newsElement.className = 'news-item';
-
-    const dateElement = document.createElement('span');
-    dateElement.className = 'news-date';
-    dateElement.textContent = newsItem.date;
-
-    const contentElement = document.createElement('div');
-    contentElement.className = 'news-content';
-
-    const textSpan = document.createElement('span');
-    textSpan.innerHTML = '🎉 ' + newsItem.content;
-    contentElement.appendChild(textSpan);
-
-    if (newsItem.links && newsItem.links.length > 0) {
-      newsItem.links.forEach(link => {
-        const space = document.createTextNode(' ');
-        contentElement.appendChild(space);
-
-        const linkElement = document.createElement('a');
-        linkElement.href = link.url;
-        linkElement.textContent = link.text;
-        if (link.url && !link.url.startsWith('#')) {
-          linkElement.setAttribute('target', '_blank');
-        }
-        contentElement.appendChild(linkElement);
+function setupPublications() {
+  const list = document.querySelector('.publications-list');
+  if (!list) return;
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => setCategory(button.dataset.category));
+  });
+  document.querySelectorAll('[data-research]').forEach(link => {
+    link.addEventListener('click', () => {
+      publicationState.query = '';
+      document.querySelector('#publication-search').value = '';
+      setCategory(link.dataset.research);
+      const controls = document.querySelector('.publication-tools');
+      if (controls) controls.open = true;
+    });
+  });
+  document.querySelector('#publication-search').addEventListener('input', event => {
+    publicationState.query = event.target.value;
+    renderPublications();
+  });
+  document.querySelectorAll('.pub-toggle-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      publicationState.mode = button.dataset.mode;
+      document.querySelectorAll('.pub-toggle-btn').forEach(item => {
+        const selected = item.dataset.mode === publicationState.mode;
+        item.classList.toggle('active', selected);
+        item.setAttribute('aria-pressed', String(selected));
       });
-    }
-
-    if (newsItem.link && newsItem.link !== '#' && (!newsItem.links || newsItem.links.length === 0)) {
-      const space = document.createTextNode(' ');
-      contentElement.appendChild(space);
-
-      const linkElement = document.createElement('a');
-      linkElement.href = newsItem.link;
-      linkElement.textContent = '[Link]';
-      linkElement.setAttribute('target', '_blank');
-      contentElement.appendChild(linkElement);
-    }
-
-    newsElement.appendChild(dateElement);
-    newsElement.appendChild(contentElement);
-    container.appendChild(newsElement);
-  });
-}
-
-// Function to render honors items
-function renderHonorsItems(honorsData, containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) {
-    console.warn('Honors container not found:', containerId);
-    return;
-  }
-
-  container.innerHTML = '';
-
-  honorsData.forEach(honor => {
-    const honorElement = document.createElement('div');
-    honorElement.className = 'honor-item';
-
-    const yearElement = document.createElement('div');
-    yearElement.className = 'honor-year';
-    yearElement.textContent = honor.date;
-
-    const contentElement = document.createElement('div');
-    contentElement.className = 'honor-content';
-
-    const titleElement = document.createElement('h3');
-    titleElement.textContent = honor.title;
-
-    const orgElement = document.createElement('p');
-    orgElement.className = 'text-sm text-neutral-600';
-    orgElement.textContent = honor.org;
-
-    contentElement.appendChild(titleElement);
-    contentElement.appendChild(orgElement);
-
-    honorElement.appendChild(yearElement);
-    honorElement.appendChild(contentElement);
-
-    container.appendChild(honorElement);
-  });
-}
-
-// Helper to open all external links in new tab
-function makeAllLinksOpenInNewTab() {
-  const links = document.querySelectorAll('a');
-  links.forEach(link => {
-    if (link.hostname !== window.location.hostname && link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.getAttribute('href').startsWith('mailto:')) {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
-    }
-  });
-}
-
-// Helper to setup MutationObserver for dynamically added links
-function setupLinkObserver() {
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
-        mutation.addedNodes.forEach(function(node) {
-          if (node.nodeType === 1) {
-            if (node.tagName === 'A') {
-              if (node.hostname !== window.location.hostname && node.getAttribute('href') && !node.getAttribute('href').startsWith('#') && !node.getAttribute('href').startsWith('mailto:')) {
-                node.setAttribute('target', '_blank');
-                node.setAttribute('rel', 'noopener noreferrer');
-              }
-            }
-            const links = node.querySelectorAll('a');
-            links.forEach(link => {
-              if (link.hostname !== window.location.hostname && link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.getAttribute('href').startsWith('mailto:')) {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
-              }
-            });
-          }
-        });
-      }
+      renderPublications();
     });
   });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
+  loadData('publications', list, papers => {
+    publicationState.papers = papers;
+    renderPublications();
   });
 }
+
+externalLinks();
+setupNavigation();
+setupPublications();
+const newsContainer = document.getElementById('news-container') || document.getElementById('all-news-container');
+loadData('news', newsContainer, items => renderNews(items, newsContainer, newsContainer.id === 'news-container' ? 3 : undefined));
+const honorsContainer = document.getElementById('honors-container') || document.getElementById('all-honors-container');
+loadData('honors', honorsContainer, items => renderHonors(items, honorsContainer));
+const year = document.getElementById('current-year');
+if (year) year.textContent = new Date().getFullYear();

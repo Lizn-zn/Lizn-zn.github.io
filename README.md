@@ -1,128 +1,67 @@
-# AP  [![Build Status](https://travis-ci.org/kssim/ap.svg?branch=master)](https://travis-ci.org/kssim/ap.svg?branch=master)
-"AP" is [Jekyll](https://jekyllrb.com/) theme for career. This theme is free and open-source.  
-Based on Chester How's tale-theme(https://github.com/chesterhow/tale) with a few new features:  
-* SNS Link
-* Google Analytics
-* Responsive design
-* Upgrading awesome fonts and modifying some layouts.
-* Use "About" as main.
-  * It can be written in simple resume form.
-* Change "Post" to "Project Portfolio"
-  * You can manage your project experience just like running a blog.
+# Zenan Li — Academic Homepage
 
+Static academic homepage at <https://lizn-zn.github.io/>. The current site uses
+plain HTML, CSS, JavaScript, and JSON; there is no build step or package install.
 
-# Preview
-[![AP Screenshot](https://github.com/kssim/ap/blob/master/screenshot.png?raw=true)](https://kssim.github.io/ap/)
+## Preview locally
 
+From the repository root:
 
-# Usage
-1. Fork and clone the AP repo:
-    * git clone https://github.com/kssim/ap.git
-2. Install Jekyll:
-    * gem install jekyll
-3. Install the theme's dependencies
-    * bundle install
-4. Customize the theme
-    * update _config.yml
-5. Run the Jekyll server
-    * jekyll serve
-
-
-## Structure
-* Here are the main files of the template
-```bash
-ap
-├── _includes                  # theme includes
-├── _layouts                   # theme layouts (see below for details)
-├── _posts                     # Project & Portfolio posts
-├── _sass                      # Sass partials 
-├── portfolio                  # Main page for "portfolio"
-├── assets
-|  ├── css                     # font-awesome and main css
-|  ├── fonts                   # Font-Awesome
-|  ├── favicon.ico             # Favicon
-|  └── img                     # Images used for "about" page
-├── _config.yml                # sample configuration
-└── index.md                   # Resume to show on "about" page
+```sh
+python3 -m http.server 8081 --bind 127.0.0.1
 ```
 
-## Configure AP
-Open _config.yml in a text editor to change most of the blog's settings.
+Open <http://127.0.0.1:8081/>. Use an HTTP server because the page fetches its
+publication, news, and honors data from JSON files.
 
+## Update content
 
-### Site Configuration
-Configure Jekyll as your own blog or with a subpath in in _config.yml:  
-```yml
-title: [Website Title]
-baseurl: [Website Subpath]
-url: [Github Page Url]
-google_analytics: [Google Analytics Tracking ID]
-```
-Please configure this before using the theme.  
-And to enable Google Analytics, add your [Traking ID](https://support.google.com/analytics/answer/1008080?visit_id=1-636579797402349951-2693679291&rd=1)
+| Content | File |
+| --- | --- |
+| Biography, affiliation, contact, research, experience, and service | `index.html` |
+| Publications and resource links | `data/publications.json` |
+| News, in editorial display order | `data/news.json` |
+| Honors and awards | `data/honors.json` |
+| Typography, layout, responsive and print styles | `styles.css` |
+| Data rendering, search, filters, and navigation | `script.js` |
+| Complete archive pages | `pages/all-publications.html`, `pages/all-news.html`, `pages/all-honors.html` |
 
+The homepage displays the first three news entries and all papers. Publication
+categories are `theorem-proving`, `neuro-symbolic`, and `trustworthy-ml`. Papers
+are sorted by year; their JSON order is preserved within the same year and topic.
+Label preprints explicitly in `venue`, for example `Preprint, 2026`.
 
+Use verified public URLs for resource tags such as `Paper` and `Code`. Leave
+unavailable links out of the `tags` array. News resource links use `url` and
+`text`; publication resource tags use `link` and `text`.
 
-### About You
-Meta variables hold basic information about your profile and resume.  
-Change these variables in _config.yml:  
-```yml
-author:
-  name: [Your Name]
-  desc: [Short introduction]
-  email: [Your E-Mail Address]
-  selfie: [Your Avatar]
-```
-Please configure this before using the theme.
+After editing CSS or JavaScript, update the asset query version in the homepage
+and the three archive pages. Canonical and sharing metadata live in each page's
+`<head>`; keep them consistent with content and the production URL.
 
+## Verify changes
 
-
-### SNS Information
-Your SNS information to display at the bottom of the page.  
-All values except "email" are text values.  
-```yml
-social:
-  email: true
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  github: 
-  google_plus:
-  instagram:
-  keybase:
-  linkedin:
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:
-  steam:
-  tumblr:
-  gitlab:
-  twitter: 
-  vimeo:
-  wordpress:
-  youtube:
-  default_txt: "Follow On"
+```sh
+node --check script.js
+python3 -m json.tool data/publications.json > /dev/null
+python3 -m json.tool data/news.json > /dev/null
+python3 -m json.tool data/honors.json > /dev/null
 ```
 
+In a browser, check the homepage and archive pages, publication search and
+filters, mobile navigation, and narrow-screen overflow. New publication URLs
+and changes to affiliations or conference status should be checked against
+primary sources.
 
-## Portfolio Schema
-```markdown
----
-layout: post
-title:  [Project title to show in portfolio list]
-info: [A brief introduction to show in portfolio list]
-tech: [The technologies used in the project to show in portfolio list]
-type: [Property of the project to be displayed in front of the project's info(toy or company name)]
----
-```
+## Historical files and design studies
 
-## Other formats
-It uses the markdown syntax by default, and there is no format other than the one mentioned above.  
-You can use it as you like.  
+Local design studies in `design-preview.html` and `design-options/` are kept
+outside the deployed site.
 
+The `.nojekyll` file identifies the current static site. `_config.yml`,
+`_layouts/`, `_includes/`, `_sass/`, `_posts/`, and `_site/` come from the older
+Jekyll site and are not the source of the current homepage. Edit the root files
+listed above, rather than generated files in `_site/`.
 
-## License
-[The MIT License (MIT)](https://raw.githubusercontent.com/kssim/ap/master/LICENSE)
+The original site used the [AP theme](https://github.com/kssim/ap), based on
+[Tale](https://github.com/chesterhow/tale). Its attribution remains in `LICENSE`.

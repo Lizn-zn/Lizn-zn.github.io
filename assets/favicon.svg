@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Zenan Li</title>
+  <rect width="64" height="64" rx="8" fill="#202e3a"/>
+  <g fill="#fff">
+    <path d="M9 16h23v5L16 43h10v-6h6v12H8v-5l16-22H15v6H9Z"/>
+    <path d="M36 16h12v5h-4v22h8v-6h5v12H36v-5h3V21h-3Z"/>
+  </g>
+  <path d="M9 55h48" stroke="#c57b61" stroke-width="3"/>
+</svg>

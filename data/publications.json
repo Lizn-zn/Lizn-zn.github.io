@@ -1,5 +1,20 @@
 [
   {
+    "title": "P³: Joint Program-and-Proof Planning for Verified Code Generation",
+    "authors": "<b>Zenan Li*</b>, Ziran Yang*, Peiyang Song, Zhaoyu Li, and Kaiyu Yang",
+    "venue": "Preprint, 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2608.09277"
+      }
+    ],
+    "category": "theorem-proving"
+  },
+  {
     "title": "Goedel-Code-Prover: Hierarchical Proof Search for Open State-of-the-Art Code Verification",
     "authors": "<b>Zenan Li*</b>, Ziran Yang*, Deyuan He, Haoyu Zhao, Andrew Zhao, Shange Tang, Kaiyu Yang, Aarti Gupta, <br>Zhendong Su, and Chi Jin",
     "venue": "COLM 2026",
@@ -78,7 +93,16 @@
     "year": "2026",
     "highlight": "",
     "thumbnail": "",
-    "tags": [],
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2605.12195"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/Xusr1123/FaReG"
+      }
+    ],
     "category": "trustworthy-ml"
   },
   {
@@ -107,7 +131,16 @@
     "year": "2026",
     "highlight": "",
     "thumbnail": "",
-    "tags": [],
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://www.usenix.org/conference/osdi26/presentation/he-baoding"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/SoaringE/seL4-proof-search"
+      }
+    ],
     "category": "theorem-proving"
   },
   {
@@ -139,7 +172,7 @@
     "tags": [
       {
         "text": "Paper",
-        "link": "https://arxiv.org/abs/2502.00511"
+        "link": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7e9afa9a02857bce4515247842471444-Abstract-Conference.html"
       },
       {
         "text": "Code",
@@ -162,7 +195,7 @@
       },
       {
         "text": "Code",
-        "link": "https://arxiv.org/abs/2502.13834"
+        "link": "https://github.com/Lizn-zn/NeqLIPS"
       }
     ],
     "category": "theorem-proving"
