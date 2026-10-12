@@ -1,6 +1,20 @@
 [
   {
     "date": "2026",
+    "content": "Our paper, <b>From Specification to Kernel Commit: Verified Code Generation on Real-World Systems</b>, was accepted at <b>ASPLOS 2027</b>.",
+    "links": [
+      {
+        "url": "https://haosun.info/assets/pdf/Vero.pdf",
+        "text": "[Paper]"
+      },
+      {
+        "url": "https://github.com/SunHao-0/Vero",
+        "text": "[Code]"
+      }
+    ]
+  },
+  {
+    "date": "2026",
     "content": "Goedel-Code-Prover, our work on hierarchical proof search for code verification, was accepted at <b>COLM 2026</b>.",
     "links": [
       {
@@ -15,16 +29,6 @@
     "links": [
       {
         "url": "https://arxiv.org/abs/2606.17981",
-        "text": "[Paper]"
-      }
-    ]
-  },
-  {
-    "date": "2026",
-    "content": "Our paper on conformal prediction was accepted at <b>KDD 2026</b>.",
-    "links": [
-      {
-        "url": "https://arxiv.org/abs/2512.02704",
         "text": "[Paper]"
       }
     ]
