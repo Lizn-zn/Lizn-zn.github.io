@@ -1,15 +1,19 @@
 [
   {
-    "title": "P³: Joint Program-and-Proof Planning for Verified Code Generation",
-    "authors": "<b>Zenan Li*</b>, Ziran Yang*, Peiyang Song, Zhaoyu Li, and Kaiyu Yang",
-    "venue": "Preprint, 2026",
-    "year": "2026",
-    "highlight": "",
+    "title": "From Specification to Kernel Commit: Verified Code Generation on Real-World Systems",
+    "authors": "Hao Sun, <b>Zenan Li</b>, Cong Li, and Zhendong Su",
+    "venue": "ASPLOS 2027",
+    "year": "2027",
+    "highlight": "Accepted",
     "thumbnail": "",
     "tags": [
       {
         "text": "Paper",
-        "link": "https://arxiv.org/abs/2608.09277"
+        "link": "https://haosun.info/assets/pdf/Vero.pdf"
+      },
+      {
+        "text": "Code",
+        "link": "https://github.com/SunHao-0/Vero"
       }
     ],
     "category": "theorem-proving"
@@ -29,6 +33,21 @@
       {
         "text": "Code",
         "link": "https://github.com/goedelcodeprover/Goedel-Code-Prover"
+      }
+    ],
+    "category": "theorem-proving"
+  },
+  {
+    "title": "P³: Joint Program-and-Proof Planning for Verified Code Generation",
+    "authors": "<b>Zenan Li*</b>, Ziran Yang*, Peiyang Song, Zhaoyu Li, and Kaiyu Yang",
+    "venue": "Preprint, 2026",
+    "year": "2026",
+    "highlight": "",
+    "thumbnail": "",
+    "tags": [
+      {
+        "text": "Paper",
+        "link": "https://arxiv.org/abs/2608.09277"
       }
     ],
     "category": "theorem-proving"
