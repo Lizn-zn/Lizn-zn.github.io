@@ -143,6 +143,7 @@ function formatVenue(paper) {
   if (!paper.venue) return paper.year ? `Preprint, ${paper.year}` : 'Preprint';
   const abbreviation = paper.venue.replace(/\s*\d{4}/g, '').trim();
   const names = {
+    ASPLOS: 'ACM International Conference on Architectural Support for Programming Languages and Operating Systems',
     COLM: 'Conference on Language Modeling',
     OOPSLA: 'ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications',
     ICML: 'International Conference on Machine Learning',
