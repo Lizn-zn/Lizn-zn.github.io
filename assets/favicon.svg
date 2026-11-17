@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>Zenan Li — kite</title>
-  <path d="M30 39c-9 8 13 9 4 17" fill="none" stroke="#888888" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="m34 7 18 15-22 20-14-24Z" fill="none" stroke="#222222" stroke-width="2.8" stroke-linejoin="round"/>
-  <path d="m34 7 1 16-5 19M16 18l19 5 17-1" fill="none" stroke="#222222" stroke-width="1.7"/>
+  <style>
+    .kite { stroke: #222222; }
+    .tail { stroke: #666666; }
+    @media (prefers-color-scheme: dark) {
+      .kite { stroke: #ffffff; }
+      .tail { stroke: #cccccc; }
+    }
+  </style>
+  <path d="M30 39c-9 8 13 9 4 17" fill="none" class="tail" stroke="#666666" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="m34 7 18 15-22 20-14-24Z" fill="none" class="kite" stroke="#222222" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="m34 7 1 16-5 19M16 18l19 5 17-1" fill="none" class="kite" stroke="#222222" stroke-width="1.7"/>
 </svg>
